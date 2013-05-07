@@ -1,0 +1,27 @@
+function doThing {
+    lessc static/less/variables.less > variables.css
+}
+
+
+intervalSeconds=5
+
+
+if [ -z "$1" ]
+then
+    dir="."
+else
+    dir="$1"
+fi
+
+
+while true
+do
+    checkSum1=`ls -lR $dir | awk '{sum += $5} END{print sum}'`
+    sleep $intervalSeconds
+    checkSum2=`ls -lR $dir | awk '{sum += $5} END{print sum}'`
+
+    if [ $checkSum1 -ne $checkSum2 ]
+    then
+        doThing
+    fi
+done

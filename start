@@ -1,0 +1,4 @@
+#!/bin/bash
+
+node server/server.js
+source listen static/less

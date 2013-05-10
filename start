@@ -1,4 +1,3 @@
 #!/bin/bash
 
-node server/server.js
-source listen static/less
+node server/server.js 6969

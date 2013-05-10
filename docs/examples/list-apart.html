@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)http://alistapart.com/article/node-at-work-a-walkthrough -->
+<html class=" js no-touch svg" lang="en" style="" data-useragent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.65 Safari/537.31" data-platform="MacIntel"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<meta charset="utf-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<meta name="application-name" content="A List Apart"> 
+		
+	<link rel="stylesheet" href="list-apart_files/styles.css">
+	
+	
+	
+
+	<title>Node at Work: A Walkthrough · An A List Apart Article</title>
+
+	
+	
+		
+	
+	<style>
+	
+	.member_121654 {
+		border: 1px solid rgba(0,0,0,.4) !important;
+	}
+	
+	
+	.member_121654::before {
+		/*box-shadow: inset 0 0 18px -8px rgba(255,161,161,.9);*/
+		content: url(http://alistapart.com/d/_/img/laurel-white-2.svg) !important;
+		padding-top: 3px !important;
+		height: 23px !important;
+	}
+	</style>
+	
+	
+	<meta name="description" content="In “Even Better In-Browser Mockups with Node.js,” Garann Means explained why Node.js makes designing applications easier and more efficient, and how to get started. Now it’s time to see your new design process in action. In this walkthrough, we’ll build a feature for a mock art store, complete with live demo and GitHub repository. Follow along at home (or in your cubicle) and you’ll have a mockup that mimics the interactions it will have with its production server precisely on the client—without the need for hard-coded data or temporary workarounds.">
+	<meta name="author" content="Garann Means">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@alistapart">
+	<meta name="twitter:title" content="Node at Work: A Walkthrough">
+	<meta name="twitter:description" content="In “Even Better In-Browser Mockups with Node.js,” Garann Means explained why Node.js makes designing applications easier and more efficient, and how to get started. Now it’s time to see your new design process in action. In this walkthrough, we’ll build a feature for a mock art store, complete with live demo and GitHub repository. Follow along at home (or in your cubicle) and you’ll have a mockup that mimics the interactions it will have with its production server precisely on the client—without the need for hard-coded data or temporary workarounds.">
+	<meta name="twitter:url" content="http://alistapart.com/article/node-at-work-a-walkthrough">
+		
+	<meta property="og:title" content="Node at Work: A Walkthrough">
+	<meta property="og:description" content="In “Even Better In-Browser Mockups with Node.js,” Garann Means explained why Node.js makes designing applications easier and more efficient, and how to get started. Now it’s time to see your new design process in action. In this walkthrough, we’ll build a feature for a mock art store, complete with live demo and GitHub repository. Follow along at home (or in your cubicle) and you’ll have a mockup that mimics the interactions it will have with its production server precisely on the client—without the need for hard-coded data or temporary workarounds.">
+	<meta property="og:url" content="http://alistapart.com/article/node-at-work-a-walkthrough">
+	<meta property="og:image" content="http://alistapart.com/d/ALA374_jsnodewalkthrough_300.png">
+		
+</head>
+
+<body class="printable breakpoint-600" cz-shortcut-listen="true">
+
+
+	
+	
+	<header class="logo-holder">
+		<h1 class="killer-logo"><a href="http://alistapart.com/"><img src="./list-apart_files/ala-logo-big.png" alt="A List Apart"></a></h1>	
+	</header>
+	
+	<div role="main" class="main-wrapper">
+	
+		<article class="article-layout hentry">
+		
+			<header class="entry-header">
+			
+				
+			
+				
+				
+								<figure class="wide-hero" data-picture="" data-alt=""><img alt="" src="./list-apart_files/ALA374_jsnodewalkthrough_300_960_414_60.jpg">
+					<div data-src="http://d.alistapart.com/_made/d/ALA374_jsnodewalkthrough_300_480_207_60.jpg"></div>
+					<div data-src="http://d.alistapart.com/_made/d/ALA374_jsnodewalkthrough_300_960_414_60.jpg" data-media="(min-width: 600px)"></div>
+					<div data-src="http://d.alistapart.com/_made/d/ALA374_jsnodewalkthrough_300_1920_827_10.jpg" data-media="(min-width: 600px) and (min-device-pixel-ratio: 2.0)"></div>
+			
+					<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+					<noscript>&lt;img src="http://d.alistapart.com/_made/d/ALA374_jsnodewalkthrough_300_960_414_10.jpg" alt=""&gt;</noscript>
+					
+					<a href="http://alistapart.com/issue/374" class="issue-number"><span>Issue №</span> 374</a>
+				</figure>
+								
+						
+				<h1 class="entry-title">Node at Work: A Walkthrough</h1>
+				
+				<p class="entry-details">
+					
+					by <a class="author" href="http://alistapart.com/author/garann">Garann Means</a>
+					
+					<time class="pubdate updated" datetime="2013-04-30T08:00:42-05:00">April 30, 2013</time>
+					
+					<span class="optional-break">
+					
+						Published in <a href="http://alistapart.com/topic/javascript">Javascript</a>
+						
+													∙ <a class="comment-count" href="http://alistapart.com/article/node-at-work-a-walkthrough#comments">8 Comments</a>
+											
+					</span>
+			
+				</p>
+				
+				
+								
+			
+			</header>
+		
+					
+					
+			<div class="main-content">
+			
+				
+				
+				
+				
+				
+				
+				<p>In my first article, “<a href="http://alistapart.com/article/even-better-in-browser-mockups-with-node.js">Even Better In-Browser Mockups with Node.js</a>,” I explained why Node.js makes designing applications easier and more efficient, and how to get started. Now it’s time to see your new design process in action.</p>
+
+				
+				
+				
+				<aside class="content-minutiae">
+										<h1>Illustration:</h1>
+					<ul>
+						<li><a href="http://alistapart.com/author/kcornell">Kevin Cornell</a></li>
+					</ul>
+															<h1 class="share-tools">Share This:</h1>
+					<ul class="share-tools">
+						<li><a href="http://twitter.com/intent/tweet?url=http://alistapart.com/article/node-at-work-a-walkthrough&text=Node+at+Work%3A+A+Walkthrough&via=alistapart">Twitter</a></li>
+						<li><a href="http://www.facebook.com/sharer.php?u=http://alistapart.com/article/node-at-work-a-walkthrough&t=Node+at+Work%3A+A+Walkthrough">Facebook</a></li>
+						<li><a href="https://plus.google.com/share?url=http://alistapart.com/article/node-at-work-a-walkthrough">Google+</a></li>
+					</ul>				
+				</aside><p>Rather than figuring out all your requirements and API schemas just to design your comps with mockup content hard-coded and server interactions faked—only to throw it all away when you go back and implement things “for real”—you can use Node.js to skip the hard-coding and produce client-side code that’s ready for beta at the end of the design stage.</p>
+
+<p>The process looks a lot like good ol’ <a href="http://alistapart.com/article/responsive-comping-obtaining-signoff-with-mockups">designing in the browser</a>, but with more JavaScript and an additional layer:</p>
+
+<ol>
+<li>Design the layout and styling</li>
+<li>Convert the markup to a JavaScript template</li>
+<li>Create an initialization function</li>
+<li>Create a simple Node.js server</li>
+<li>Add a mockup data object to the server</li>
+<li>Add server functions to serve static pages and JSON</li>
+<li>Request and consume the JSON on the client</li>
+</ol>
+
+<p>Sound daunting? Don’t worry. The first step takes approximately a zillion times longer than any of the others. So if you’ve already mastered the design, you’ll find the rest of these steps more than manageable.</p>
+
+<p>In this walkthrough, we’ll build a feature for a mock art store. If you want to follow along at home, you can clone my <a href="https://github.com/garann/coolartstore">GitHub repository</a>. (If you need help installing, see the <a href="https://github.com/garann/coolartstore/blob/master/README.md">README</a>, or just take a peek at the <a href="http://coolartstore.rs.af.cm/">live demo</a>—I’ll cover all the steps and code below.)</p>
+
+<h2 id="section1">Creating templates</h2>
+
+<p>Once you have a solid design and the markup to accompany it, converting it to a template you can use for all examples is more efficient than creating duplicate markup for each one. The hard part’s over; you already thought about where data points would be used in the design when you created it. With those choices fresh in your mind, go back and mark up your HTML with data in whatever template language you prefer.</p>
+
+<p>For my example, I’m using a store selling art prints. Here’s a snippet of my initial markup:</p>
+
+<pre id="snippet1"><code>&lt;h2&gt;Two Acrobats with a Dog&lt;/h2&gt;
+&lt;h3&gt;Pablo Picasso&lt;/h3&gt;
+&lt;img src="img/102.jpg" alt="Two Acrobats with a Dog" class="active" /&gt;
+&lt;ul class="info"&gt;
+	&lt;li&gt;8" x 11"&lt;/li&gt;
+	&lt;li&gt;acid-free paper&lt;/li&gt;
+	&lt;li&gt;suitable for matting&lt;/li&gt;
+&lt;/ul&gt;
+&lt;span class="price"&gt;$49.99&lt;/span&gt;</code></pre>
+
+<p>Think of your templates as places to define your requirements for both data and its formatting on the client side. If you can also reuse it for client-side rendering, that’s awesome—but that may not be relevant to your application. As long as you have good data, converting from one template language to another is trivial, so don’t agonize over which template engine to use.</p>
+
+<p>You do need a template engine that will work in both the browser and Node.js, however. If you’re unsure, search for your template engine on <a href="https://github.com/">GitHub</a> and verify that there’s a guide to installing it via <a href="https://npmjs.org/">npm</a> in the manual, as well as a minified script for use on the client. I prefer <a href="http://olado.github.io/doT/index.html">doT.js</a>, so here’s that snippet again marked up to add data using doT:</p>
+
+<pre id="snippet2"><code>&lt;h2&gt;{{=it.title}}&lt;/h2&gt;
+&lt;h3&gt;{{=it.artist.name}}&lt;/h3&gt;
+&lt;img src="img/{{=it.id}}.jpg" alt="{{=it.title}}" class="active" /&gt;
+&lt;ul class="info"&gt;
+	{{~it.info :info_item}}
+	&lt;li&gt;{{=info_item}}&lt;/li&gt;
+	{{~}}
+&lt;/ul&gt;
+&lt;span class="price"&gt;{{=it.price}}&lt;/span&gt;</code></pre>
+
+<p>I like to save my templates in their own directory at the same level as my JavaScript directory, so now I store that as <code>tmpl/detail.dot</code>.</p>
+
+<h2 id="section2">Initializing the client</h2>
+
+<p>Since we want to be able to use our templates in both Node and the browser, they need to be stored outside of the HTML and loaded and compiled when we open the page. To start, save the minified version of your template engine and add a script tag to your page to include it. Once that’s done, you can fetch the template, compile it, and then continue on with any other initialization work in your main JavaScript file. I’m using jQuery in my example, so my code looks like this:</p>
+
+<pre id="snippet3"><code>var detailTmpl;
+
+$.when( 
+	$.get( "tmpl/detail.dot", function( tmpl ) {
+		detailTmpl = doT.template( tmpl );
+	}, "text" ) 
+).then( init );</code></pre>
+
+<p>That mysterious <code>init</code> function? That’s where I’ll put any interactivity I want to add to my currently static mockup. For the moment I’m only creating one interaction, so my <code>init</code> function is pretty simple:</p>
+
+<pre id="snippet4"><code>function init() {
+	$( "div.content" ).on( "click", "div.result", showDetail );
+}</code></pre>
+
+<p>This code can be made much more elegant using <a href="http://requirejs.org/">Require.js</a> with its text plugin. That’s beyond the scope of this demo, but I highly encourage it for production.</p>
+
+<p>We’ll handle template rendering in <code>showDetail()</code>, but we have to add a server and data store before writing that function, since right now we lack any data <em>to</em> render.</p>
+
+<h2 id="section3">Creating a server</h2>
+
+<p>If I reload my page now and open the browser console, I get a JavaScript error. That’s because I’m trying to load my template via an XMLHttpRequest (XHR) on a page being served from the file system, in violation of the <a href="http://en.wikipedia.org/wiki/Same_origin_policy">same origin policy</a>. I can’t even check that my template works until the page is served properly (i.e., from a server).</p>
+
+<p>To whip up a simple Node server that allows me to run my XHRs, I do a few things:</p>
+
+<ul>
+<li>Move all my existing assets into a new subdirectory called <code>public</code></li>
+<li>Open my terminal or command line to my working directory and run <code>npm install express</code></li>
+<li>Add a server.js file to the working directory</li>
+</ul>
+
+<p>We could write everything from scratch, of course, but it’s more work than is necessary for a basic server. The <a href="http://expressjs.com/">Express</a> framework provides a number of abstractions of server and application concepts. For the initial version of the server, the only one we’ll need is its ability to serve static resources. We can use it by adding four lines of code to <code>server.js</code>:</p>
+
+<pre id="snippet5"><code>var express = require( "express" ),
+	app = express();
+
+app.use( express.static( __dirname + "/public" ) );
+
+app.listen( 3000 );</code></pre>
+
+<p>Once you start your server by typing <code>node server.js</code> in your open terminal or command line, you can view your page at http://localhost:3000 (adding a filename if necessary), and the error related to loading the template ought to disappear.</p>
+
+<h2 id="section4">Adding server-side data</h2>
+
+<p>While it’s certainly nice to be able to use XHRs, we’re creating the Node server to use it as a representation of the real server—and real servers store data. Though it’s not hard to create a data store that works with a Node server, it’s even less difficult to create one big <a href="https://developer.mozilla.org/en-US/docs/JavaScript/Guide/Values,_variables,_and_literals?redirectlocale=en-US&redirectslug=Core_JavaScript_1.5_Guide/Values,_Variables,_and_Literals%23Object_literals">object literal</a>. For a mockup, that’s all we really need. One of the goals here is to define the data objects we need to support in our new design, so the format of this object can be determined by the template we just added. For my example, I need an object structured something like this:</p>
+
+<pre id="snippet6"><code>var products = {
+	"102": {
+		id: 102,
+		title: "Two Acrobats with a Dog",
+		artist: {
+			name: "Pablo Picasso"
+		},
+		price: "$49.99",
+		info: [
+			"8\" x 11\"",
+			"acid-free paper",
+			"suitable for matting"
+		]
+	}
+};</code></pre>
+
+<p>Note that <code>products</code> could just as easily be an array, but I want to be able to quickly find my products—once I have more than one in my fake data store—by ID. Aside from that little twist, the data look exactly like the content hard-coded in my original HTML. If I want to add more data, including things that might break the layout in unpredictable ways, I can just copy this structure and make substitutions. Well, almost.</p>
+
+<h2 id="section5">Returning data from the server</h2>
+
+<p>If you’ve dealt with other server-side frameworks, creating endpoints for XHRs might seem intimidating, but Express makes it really easy. We don’t need any special setup to define a server endpoint as a target for asynchronous requests. All we have to do is define the path on the server where we want to accept requests and a callback. The callback receives a request object (for doing things like getting passed-in data) and a response object (for defining what we return to the client). To return the data in my products object, I add a few lines of code at the bottom of server.js:</p>
+
+<pre id="snippet7"><code>app.get( "/detail/:id", function( req, res ) {
+	res.send( products[ req.params.id ] );
+});
+
+app.listen( 3000 );</code></pre>
+
+<p>See? Easy. If I restart my server and go to http://localhost:3000/detail/102, I should see my object data. To break down what’s going on with the ID in the path, we’ve named the data at that position in the path "id" with the <code>:id</code> bit, and it then becomes available as a property of <code>req.params</code>.</p>
+
+<p>The names and positions of parameters are up to us, and if our path were super complex, we could also use regular expressions to split out multiple pieces of data. Express also gives us the option of accepting data from the query string or from a POST. Of all the pieces we’re creating, however, the paths are the most likely to change in production, so it’s to our advantage to keep them as readable as possible.</p>
+
+<p>Besides sending pure data to the client, we also want to be able to send rendered HTML, in case a user is linked directly to a product detail or doesn’t have JavaScript available. We might also want HTML for our own consumption via XHR, if we find that client-side rendering is slowing us down. So we add a second endpoint below the one we just created to do that:</p>
+
+<pre id="snippet8"><code>app.get( "/product/:id", function( req, res ) {
+	res.render( "detail", products[ req.params.id ] );
+});</code></pre>
+
+<p>For simplicity’s sake, and because the first path served JSON for an overlay while this provides a full page, I’ve used a different pathname, but kept the same pattern. This time, instead of the response’s send function, I use <code>render()</code>. Express provides some magic to make template rendering work out of the box, but since I’m using doT instead of Jade (the default template engine of Express), I have to do some additional setup.</p>
+
+<p>First I have to go back to the terminal or command line, stop my Node server, and install my template engine using <code>npm install doT</code> and the consolidate module (which provides Express compatibility for a number of popular template engines) using <code>npm install consolidate</code>. Now I’ve got both of those in my <code>node_modules</code> directory and can use them in <code>server.js</code>.</p>
+
+<p>Since doT (and probably your template engine of choice, as well) is accessed through consolidate, consolidate is the only additional module I need to require at the top of <code>server.js</code>:</p>
+
+<pre id="snippet9"><code>var express = require( "express" ),
+	app = express(),
+	cons = require( "consolidate" );</code></pre>
+
+<p>I want to continue serving some of my other pages statically, so I add my template configuration stuff below the existing <code>app.use</code> line in my code:</p>
+
+<pre id="snippet10"><code>app.use( express.static( _dirname + "/public" ) );
+app.engine( "dot", cons.dot );
+app.set( "view engine", "dot" );
+app.set( "views", _dirname + "/public/tmpl" );</code></pre>
+
+<p>Those three new lines set doT (as exposed by consolidate) as the view engine, register files ending in <code>.dot</code> as templates, and tell Express to look in <code>/public/tmpl</code> for templates to use. So when Node sees <code>res.render( "detail", { ... } )</code>, it knows to expand <code>"detail"</code> to <code>/public/tmpl/detail.dot</code> and render it as a doT template. Now I can restart my server, go to http://localhost:3000/product/102, and see my template rendered statically, without creating a separate server-side file.</p>
+
+<h2 id="section6" title="Penis">Fetching dynamic data</h2>
+
+<p>Our template now works as a static page, but there’s still one more step to get our mockup populated with the data from the server. Remember the <code>showDetail</code> function from our main client-side script? It’s time to flesh that out.</p>
+
+<p>In my simple example, the overlay my template will populate already exists as a hidden <code>div</code> on the main page, and it appears when the user clicks a <code>div</code> containing a summary of the content. This div has a data attribute storing the ID of the product that corresponds to the key and id property in my server-side data object. Once that click event happens and <code>showDetail()</code> is called, I just need to do this: </p>
+
+<pre id="snippet11"><code>function showDetail( e ) {
+	var id = $( this ).data( "id" );
+	$.get( "detail/" + id, function( info ) {
+		$( "div.detail" ).html( detailTmpl( info ) );
+		$( "div.detail" ).show();
+	}
+}</code></pre>
+
+<p>The path above is the same one I defined in <code>server.js</code>. If you chose a different name for yours, use that name here on the client. When I receive the data object from the server, I pass it to <code>detailTmpl()</code>, the compiled version of my template. The result of the <code>detailTmpl</code> function is the HTML to populate my overlay.</p>
+
+<h2 id="section7">Onward</h2>
+
+				
+				
+				
+				
+								<aside class="sidebar">
+				
+					<h1>Also in Issue № 374</h1>
+									<h2><a href="http://alistapart.com/article/even-better-in-browser-mockups-with-node.js">Even Better In-Browser Mockups with Node.js</a></h2>
+					
+					<p>by Garann Means</p>
+								</aside>
+								
+				
+				<p>So there you have it! A mockup that mimics the interactions it will have with its production server precisely on the client, without the need for hard-coded data or temporary workarounds. Despite the simple exercise, the process I’ve outlined accomplishes a good deal of the setup necessary to create other workflows that require server interactions. For instance, I can fill my fake data store with more products and use that to render the initial page that triggers my overlay without having to revisit my mockup data, and my application will show the correct values in any view I add to it.</p>
+
+<p>If you’d like to explore beyond just serving HTML and JSON, consider adding in <a href="http://socket.io/">Socket.io</a> to allow real-time interaction for multiple clients or Require.js to manage your assets on the client. You could also move your CSS into templates and serve different builds of your site for different browsers or devices. Your mockup can be as sophisticated and reflect as many of its production requirements as you choose. At the end, the lion’s share of your client-side code is done and ready to use.</p>
+				
+				
+				
+								
+			</div>
+			
+			<footer class="entry-footer">
+				
+									
+				<h1>About the Author</h1>
+				<div class="byline author vcard">
+				
+					<a class="photo" href="http://alistapart.com/author/garann"><img src="./list-apart_files/photo_121654_120_120_c1.jpg" alt=""></a>					
+					<h2><a class="fn" href="http://alistapart.com/author/garann">Garann Means</a></h2>
+					
+					<div class="author-bio"><p><a href="http://garann.com/">Garann</a> has been making websites since the 90s and, after spending time as a full-stack developer, has the privilege of spending her days mostly writing JavaScript. She has written one book on Node.js, organizes local meetups, speaks at conferences, and generally tries to stay involved with her dev community. You can also find her on <a href="https://twitter.com/garannm">Twitter</a>.</p></div>
+					
+									
+								
+								<h3>More from this Author</h3>
+				
+				<ul class="author-more">
+								
+								
+								
+								
+				
+								
+								
+									<li><a href="http://alistapart.com/article/even-better-in-browser-mockups-with-node.js">Even Better In-Browser Mockups with Node.js</a></li>
+								
+				</ul>				
+								
+				
+
+				</div>
+
+
+
+			</footer>
+			
+			<div class="post-article">
+			
+				<div class="column-holder unequal-columns">
+					
+					<section id="comments" class="column comment-holder">
+						
+												<h1 class="classy">8 Reader Comments</h1>
+						
+												
+						
+												
+						
+						
+											<ol class="article-comments" id="comments-parent" data-xid="b3b8c00a50eeecde803ee1c7bfa68bafa90d2af8">
+							
+							
+							
+							<li id="334718" data-count="1" class="comment member_131304">
+																<img src="./list-apart_files/avatar_131304.jpg" class="commenter-avatar" alt="" width="48" height="48">
+																<p class="comment-byline">
+									<span class="commenter-name">
+																				<a href="http://daniel.grocock.me/">Daniel Grocock</a>
+																			</span>
+									<time datetime=""><a href="http://alistapart.com/comments/node-at-work-a-walkthrough#334718">10:12 am on April 30, 2013</a></time>
+								</p>
+								<div class="comment-body">
+										<p>Is Node.js powerful enough to replace <span class="caps">PHP</span>?</p>
+								</div>
+								
+								<div class="comment-tools">
+																		<a href="http://alistapart.com/article/node-at-work-a-walkthrough#" class="embed-link">Embed</a>
+								</div>
+								
+																
+								<div class="embed-comment">
+									
+									Copy &amp; paste the code below to embed this comment.
+									<textarea class="embed-code">&lt;figure class="embedded-quote" id="ala-embedded-comment-334718"&gt;&lt;blockquote&gt;	&lt;p&gt;Is Node.js powerful enough to replace &lt;span class="caps"&gt;PHP&lt;/span&gt;?&lt;/p&gt;&lt;/blockquote&gt;&lt;figcaption&gt;— Daniel Grocock on &lt;a href="http://alistapart.com/comments/node-at-work-a-walkthrough#334718"&gt;Node at Work: A Walkthrough&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;										
+&lt;script async data-comment="334718" charset="utf-8" src="http://d.alistapart.com/_/js/comment-embed.min.js"&gt;&lt;/script&gt;</textarea>
+									
+									<div class="button-holder">
+										<input type="submit" name="cancel" value="Close" class="cancel-embed">
+									</div>
+								</div>
+								
+							</li>
+							
+							
+							<li id="334721" data-count="2" class="comment member_131315">
+																<img src="./list-apart_files/avatar_131315.jpg" class="commenter-avatar" alt="" width="48" height="48">
+																<p class="comment-byline">
+									<span class="commenter-name">
+																				<a href="http://modjs.wordpress.com/">Matt Fysh</a>
+																			</span>
+									<time datetime=""><a href="http://alistapart.com/comments/node-at-work-a-walkthrough#334721">7:09 pm on April 30, 2013</a></time>
+								</p>
+								<div class="comment-body">
+										<p>Another option for controlling <span class="caps">AJAX</span> responses is <a href="http://robohydra.org/">Robohydra</a> written by Opera. It gives you an admin interface where you can easily attach and detach responses, however I would first recommend going through the article just to have an understanding of how the node.js underbelly works in this situation.</p>
+								</div>
+								
+								<div class="comment-tools">
+																		<a href="http://alistapart.com/article/node-at-work-a-walkthrough#" class="embed-link">Embed</a>
+								</div>
+								
+																
+								<div class="embed-comment">
+									
+									Copy &amp; paste the code below to embed this comment.
+									<textarea class="embed-code">&lt;figure class="embedded-quote" id="ala-embedded-comment-334721"&gt;&lt;blockquote&gt;	&lt;p&gt;Another option for controlling &lt;span class="caps"&gt;AJAX&lt;/span&gt; responses is &lt;a href="http://robohydra.org/"&gt;Robohydra&lt;/a&gt; written by Opera. It gives you an admin interface where you can easily attach and detach responses, however I would first recommend going through the article just to have an understanding of how the node.js underbelly works in this situation.&lt;/p&gt;&lt;/blockquote&gt;&lt;figcaption&gt;— Matt Fysh on &lt;a href="http://alistapart.com/comments/node-at-work-a-walkthrough#334721"&gt;Node at Work: A Walkthrough&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;										
+&lt;script async data-comment="334721" charset="utf-8" src="http://d.alistapart.com/_/js/comment-embed.min.js"&gt;&lt;/script&gt;</textarea>
+									
+									<div class="button-holder">
+										<input type="submit" name="cancel" value="Close" class="cancel-embed">
+									</div>
+								</div>
+								
+							</li>
+							
+							
+							<li id="334722" data-count="3" class="comment member_121654">
+																<img src="./list-apart_files/photo_121654_60_60_c1.jpg" class="commenter-avatar" alt="" width="60" height="60">
+																<p class="comment-byline">
+									<span class="commenter-name">
+																				<a href="http://garann.com/">Garann Means</a>
+																			</span>
+									<time datetime=""><a href="http://alistapart.com/comments/node-at-work-a-walkthrough#334722">10:45 pm on April 30, 2013</a></time>
+								</p>
+								<div class="comment-body">
+										<p>@Daniel Grocock – That’s a pretty broad question.. I think the correct answer is: probably. It really depends on what you need to do, though. It likely won’t come down to an issue of power so much as whether using Node offers an advantage for the kind of work your app is doing.</p>
+
+	<p>@Matt Frysh – Absolutely, good call. Once you’re comfortable with generic tools and modules that fit a wide range of use cases, there’s a ton to explore to abstract away boilerplate code for more specific tasks.</p>
+								</div>
+								
+								<div class="comment-tools">
+																		<a href="http://alistapart.com/article/node-at-work-a-walkthrough#" class="embed-link">Embed</a>
+								</div>
+								
+																
+								<div class="embed-comment">
+									
+									Copy &amp; paste the code below to embed this comment.
+									<textarea class="embed-code">&lt;figure class="embedded-quote" id="ala-embedded-comment-334722"&gt;&lt;blockquote&gt;	&lt;p&gt;@Daniel Grocock – That’s a pretty broad question.. I think the correct answer is: probably. It really depends on what you need to do, though. It likely won’t come down to an issue of power so much as whether using Node offers an advantage for the kind of work your app is doing.&lt;/p&gt;&lt;p&gt;@Matt Frysh – Absolutely, good call. Once you’re comfortable with generic tools and modules that fit a wide range of use cases, there’s a ton to explore to abstract away boilerplate code for more specific tasks.&lt;/p&gt;&lt;/blockquote&gt;&lt;figcaption&gt;— Garann Means on &lt;a href="http://alistapart.com/comments/node-at-work-a-walkthrough#334722"&gt;Node at Work: A Walkthrough&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;										
+&lt;script async data-comment="334722" charset="utf-8" src="http://d.alistapart.com/_/js/comment-embed.min.js"&gt;&lt;/script&gt;</textarea>
+									
+									<div class="button-holder">
+										<input type="submit" name="cancel" value="Close" class="cancel-embed">
+									</div>
+								</div>
+								
+							</li>
+							
+							
+							<li id="334781" data-count="4" class="comment member_131094">
+																								<img class="commenter-avatar" src="./list-apart_files/c6df8f1fad12e20605c660ab2fc92c6c" width="60" height="60" alt="">
+																<p class="comment-byline">
+									<span class="commenter-name">
+																				Bob Cochran
+																			</span>
+									<time datetime=""><a href="http://alistapart.com/comments/node-at-work-a-walkthrough#334781">5:01 pm on May 05, 2013</a></time>
+								</p>
+								<div class="comment-body">
+										<p>I was able to get the Cool Art Store site to render just fine on a unix box once I unblocked port 3000. You may want to point this out, since any decent firewall closes off all ports by default and those which are needed for some purpose have to be explicitly opened. It looks like you are using a model-view-controller framework here but without a longer introduction most of your excellent article is lost on me. I’m sure I need to study the documentation better—for example, learn about Express and <span class="caps">XHR</span>. Thanks for a most helpful getting-started download.</p>
+								</div>
+								
+								<div class="comment-tools">
+																		<a href="http://alistapart.com/article/node-at-work-a-walkthrough#" class="embed-link">Embed</a>
+								</div>
+								
+																
+								<div class="embed-comment">
+									
+									Copy &amp; paste the code below to embed this comment.
+									<textarea class="embed-code">&lt;figure class="embedded-quote" id="ala-embedded-comment-334781"&gt;&lt;blockquote&gt;	&lt;p&gt;I was able to get the Cool Art Store site to render just fine on a unix box once I unblocked port 3000. You may want to point this out, since any decent firewall closes off all ports by default and those which are needed for some purpose have to be explicitly opened. It looks like you are using a model-view-controller framework here but without a longer introduction most of your excellent article is lost on me. I’m sure I need to study the documentation better—for example, learn about Express and &lt;span class="caps"&gt;XHR&lt;/span&gt;. Thanks for a most helpful getting-started download.&lt;/p&gt;&lt;/blockquote&gt;&lt;figcaption&gt;— Bob Cochran on &lt;a href="http://alistapart.com/comments/node-at-work-a-walkthrough#334781"&gt;Node at Work: A Walkthrough&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;										
+&lt;script async data-comment="334781" charset="utf-8" src="http://d.alistapart.com/_/js/comment-embed.min.js"&gt;&lt;/script&gt;</textarea>
+									
+									<div class="button-holder">
+										<input type="submit" name="cancel" value="Close" class="cancel-embed">
+									</div>
+								</div>
+								
+							</li>
+							
+							
+							<li id="334795" data-count="5" class="comment member_131386">
+																								<img class="commenter-avatar" src="./list-apart_files/e267705ea2720ff3b801db4c6b5adccf" width="60" height="60" alt="">
+																<p class="comment-byline">
+									<span class="commenter-name">
+																				Jeremy P Epstein
+																			</span>
+									<time datetime=""><a href="http://alistapart.com/comments/node-at-work-a-walkthrough#334795">3:19 pm on May 07, 2013</a></time>
+								</p>
+								<div class="comment-body">
+										<p>Interesting idea, but in my opinion using Node.js for a simple mockup with a handful of templates is overkill. Node.js is still a very new technology, and it has a significant learning curve for the uninitiated.</p>
+
+	<p>What’s more, the main feature of Node.js is asynchronous I/O. For the example given in this article, virtually no I/O takes place (minimal file reading, no database, no socket / network stuff). So, what’s the payoff in using Node.js instead of a more established technology?</p>
+
+	<p>I’ve built basic mockups with templates on several occasions, over the years, using <span class="caps">PHP</span> (by itself, without a <span class="caps">CMS</span> or framework). Write some clean template files (e.g. for base, header, footer, article, sidebar, etc). Define structured data in some associative arrays. Really quick ‘n’ easy.</p>
+
+	<p>The example presented in this article isn’t rocket science, and it isn’t anything that’s never been possible before now. The only reasons that I can really think of, for building such a simple tool in Node.js, would be (a) for novelty’s sake; and (b) as a beginner learning exercise in Node.js.</p>
+								</div>
+								
+								<div class="comment-tools">
+																		<a href="http://alistapart.com/article/node-at-work-a-walkthrough#" class="embed-link">Embed</a>
+								</div>
+								
+																
+								<div class="embed-comment">
+									
+									Copy &amp; paste the code below to embed this comment.
+									<textarea class="embed-code">&lt;figure class="embedded-quote" id="ala-embedded-comment-334795"&gt;&lt;blockquote&gt;	&lt;p&gt;Interesting idea, but in my opinion using Node.js for a simple mockup with a handful of templates is overkill. Node.js is still a very new technology, and it has a significant learning curve for the uninitiated.&lt;/p&gt;&lt;p&gt;What’s more, the main feature of Node.js is asynchronous I/O. For the example given in this article, virtually no I/O takes place (minimal file reading, no database, no socket / network stuff). So, what’s the payoff in using Node.js instead of a more established technology?&lt;/p&gt;&lt;p&gt;I’ve built basic mockups with templates on several occasions, over the years, using &lt;span class="caps"&gt;PHP&lt;/span&gt; (by itself, without a &lt;span class="caps"&gt;CMS&lt;/span&gt; or framework). Write some clean template files (e.g. for base, header, footer, article, sidebar, etc). Define structured data in some associative arrays. Really quick ‘n’ easy.&lt;/p&gt;&lt;p&gt;The example presented in this article isn’t rocket science, and it isn’t anything that’s never been possible before now. The only reasons that I can really think of, for building such a simple tool in Node.js, would be (a) for novelty’s sake; and (b) as a beginner learning exercise in Node.js.&lt;/p&gt;&lt;/blockquote&gt;&lt;figcaption&gt;— Jeremy P Epstein on &lt;a href="http://alistapart.com/comments/node-at-work-a-walkthrough#334795"&gt;Node at Work: A Walkthrough&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;										
+&lt;script async data-comment="334795" charset="utf-8" src="http://d.alistapart.com/_/js/comment-embed.min.js"&gt;&lt;/script&gt;</textarea>
+									
+									<div class="button-holder">
+										<input type="submit" name="cancel" value="Close" class="cancel-embed">
+									</div>
+								</div>
+								
+							</li>
+							
+							
+							<li id="334797" data-count="6" class="comment member_131094">
+																								<img class="commenter-avatar" src="./list-apart_files/c6df8f1fad12e20605c660ab2fc92c6c" width="60" height="60" alt="">
+																<p class="comment-byline">
+									<span class="commenter-name">
+																				Bob Cochran
+																			</span>
+									<time datetime=""><a href="http://alistapart.com/comments/node-at-work-a-walkthrough#334797">5:25 pm on May 07, 2013</a></time>
+								</p>
+								<div class="comment-body">
+										<p>@Jeremy, I’m extremely grateful that Garann published these articles because otherwise I’d never have looked at node.js. My experience is that any tool that offers good mockups with the option to make those mockups a lot more complex is worth looking at and implementing. All programming languages and web-based technologies are difficult to learn. The term “mockup” can mean different things to different people, so I would say that any tool that offers a way to render and inspect the final design and its many interactions at low cost is worth investigating and working with. It is up to the user to squeeze some juice from the tool in light of his or her particular project. Garann presents a technology that is interesting to explore.</p>
+								</div>
+								
+								<div class="comment-tools">
+																		<a href="http://alistapart.com/article/node-at-work-a-walkthrough#" class="embed-link">Embed</a>
+								</div>
+								
+																
+								<div class="embed-comment">
+									
+									Copy &amp; paste the code below to embed this comment.
+									<textarea class="embed-code">&lt;figure class="embedded-quote" id="ala-embedded-comment-334797"&gt;&lt;blockquote&gt;	&lt;p&gt;@Jeremy, I’m extremely grateful that Garann published these articles because otherwise I’d never have looked at node.js. My experience is that any tool that offers good mockups with the option to make those mockups a lot more complex is worth looking at and implementing. All programming languages and web-based technologies are difficult to learn. The term “mockup” can mean different things to different people, so I would say that any tool that offers a way to render and inspect the final design and its many interactions at low cost is worth investigating and working with. It is up to the user to squeeze some juice from the tool in light of his or her particular project. Garann presents a technology that is interesting to explore.&lt;/p&gt;&lt;/blockquote&gt;&lt;figcaption&gt;— Bob Cochran on &lt;a href="http://alistapart.com/comments/node-at-work-a-walkthrough#334797"&gt;Node at Work: A Walkthrough&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;										
+&lt;script async data-comment="334797" charset="utf-8" src="http://d.alistapart.com/_/js/comment-embed.min.js"&gt;&lt;/script&gt;</textarea>
+									
+									<div class="button-holder">
+										<input type="submit" name="cancel" value="Close" class="cancel-embed">
+									</div>
+								</div>
+								
+							</li>
+							
+							
+							<li id="334798" data-count="7" class="comment member_121654">
+																<img src="./list-apart_files/photo_121654_60_60_c1.jpg" class="commenter-avatar" alt="" width="60" height="60">
+																<p class="comment-byline">
+									<span class="commenter-name">
+																				<a href="http://garann.com/">Garann Means</a>
+																			</span>
+									<time datetime=""><a href="http://alistapart.com/comments/node-at-work-a-walkthrough#334798">12:47 am on May 08, 2013</a></time>
+								</p>
+								<div class="comment-body">
+										<p>@Bob Cochran – That’s a good point about ports. Thanks for adding it – I hadn’t even considered it. </p>
+
+	<p>If you mean Express when you mention <span class="caps">MVC</span>, it definitely has much more power than what’s shown here, but it’s also a great tool for getting started. And, as you mention later, it can be extended into something much more involved, which is why I’m a fan of the framework.</p>
+
+	<p>@Jeremy P Epstein – The two main reasons I’d choose Node for this over <span class="caps">PHP</span> would be 1) being able to share resources between the client and server, and 2) not knowing <span class="caps">PHP</span>. The latter is an annoyance I feel personally, as a former .NET and Java developer. The former, to me, is the big payoff. </p>
+
+	<p>Especially for mocking-up (but also for production where possible) I like the <span class="caps">DRY</span>ness of not translating logic and templates for two different languages. As single-page apps become more prevalent and more logic exists on the client, this becomes more and more valuable in my non-mockup work, and starting in Node makes it really easy.</p>
+
+	<p>You’re absolutely correct that this demo doesn’t show off Node’s real strengths in terms of what you can do when everything is async. But it’s only meant to help people unfamiliar with Node get comfortable using it. I’d love to see another more focused article on A List Apart someday talking about some of the awesome possibilities it opens up!</p>
+								</div>
+								
+								<div class="comment-tools">
+																		<a href="http://alistapart.com/article/node-at-work-a-walkthrough#" class="embed-link">Embed</a>
+								</div>
+								
+																
+								<div class="embed-comment">
+									
+									Copy &amp; paste the code below to embed this comment.
+									<textarea class="embed-code">&lt;figure class="embedded-quote" id="ala-embedded-comment-334798"&gt;&lt;blockquote&gt;	&lt;p&gt;@Bob Cochran – That’s a good point about ports. Thanks for adding it – I hadn’t even considered it. &lt;/p&gt;&lt;p&gt;If you mean Express when you mention &lt;span class="caps"&gt;MVC&lt;/span&gt;, it definitely has much more power than what’s shown here, but it’s also a great tool for getting started. And, as you mention later, it can be extended into something much more involved, which is why I’m a fan of the framework.&lt;/p&gt;&lt;p&gt;@Jeremy P Epstein – The two main reasons I’d choose Node for this over &lt;span class="caps"&gt;PHP&lt;/span&gt; would be 1) being able to share resources between the client and server, and 2) not knowing &lt;span class="caps"&gt;PHP&lt;/span&gt;. The latter is an annoyance I feel personally, as a former .NET and Java developer. The former, to me, is the big payoff. &lt;/p&gt;&lt;p&gt;Especially for mocking-up (but also for production where possible) I like the &lt;span class="caps"&gt;DRY&lt;/span&gt;ness of not translating logic and templates for two different languages. As single-page apps become more prevalent and more logic exists on the client, this becomes more and more valuable in my non-mockup work, and starting in Node makes it really easy.&lt;/p&gt;&lt;p&gt;You’re absolutely correct that this demo doesn’t show off Node’s real strengths in terms of what you can do when everything is async. But it’s only meant to help people unfamiliar with Node get comfortable using it. I’d love to see another more focused article on A List Apart someday talking about some of the awesome possibilities it opens up!&lt;/p&gt;&lt;/blockquote&gt;&lt;figcaption&gt;— Garann Means on &lt;a href="http://alistapart.com/comments/node-at-work-a-walkthrough#334798"&gt;Node at Work: A Walkthrough&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;										
+&lt;script async data-comment="334798" charset="utf-8" src="http://d.alistapart.com/_/js/comment-embed.min.js"&gt;&lt;/script&gt;</textarea>
+									
+									<div class="button-holder">
+										<input type="submit" name="cancel" value="Close" class="cancel-embed">
+									</div>
+								</div>
+								
+							</li>
+							
+							
+							<li name="latest" id="334801" data-count="8" class="comment member_131094">
+																								<img class="commenter-avatar" src="./list-apart_files/c6df8f1fad12e20605c660ab2fc92c6c" width="60" height="60" alt="">
+																<p class="comment-byline">
+									<span class="commenter-name">
+																				Bob Cochran
+																			</span>
+									<time datetime=""><a href="http://alistapart.com/comments/node-at-work-a-walkthrough#334801">6:47 pm on May 09, 2013</a></time>
+								</p>
+								<div class="comment-body">
+										<p>This is the start of my 4th night of working with Node, Express, and doT. It is a big challenge for me. I downloaded the “coolartstore” code from GitHub, got the index.html page from that to render completely as a check on how correctly  I had installed Node and also whether whether there were networking issues. </p>
+
+	<p>Then I set out to create my own page, my own template, and my own app, using coolartstore as a guide. My goal: create a doT template which can be rendered to hold the heading “Hello world from Bob”, and then move that template inside the index.html content. The name of the template is hello.dot. </p>
+
+	<p>The template renders just fine, that is I can go to http://localhost:3000/hello and see the rendered template. Since it is just an h2 heading inside a div, it of course shows on the browser as black text on a white background. </p>
+
+	<p>The index.html page renders just fine, too: I can go to http://localhost:3000/ and see a the page rendered very nicely in coolartstore regalia, since I reused the css. I took out all the coolartstore markup and replaced it with a line of my own, an h1 heading. Only the header and footer content shows. I can’t get the template to render inside the index.html page.</p>
+
+	<p>I closely read this article each day. I have two printed copies of it with copious notes penned in the margins. I believe I have to load the hello.dot template into index.html using javascript that is in the script.js file from coolartstore. That must be what is escaping me. I thought Express was using some magic in app.get to cause the template to be injected into the index.html. Since I’m new to JavaScript, that is a fun challenge, too. I’m aware that the Javascript is actually using jQuery. I’m hoping to use plain old Javascript since jQuery would add more complexity to my learning curve.</p>
+
+	<p>Tonight I’m hoping to figure out how to get my hello.dot template to work inside the index.html. Slowly I am succeeding.</p>
+								</div>
+								
+								<div class="comment-tools">
+																		<a href="http://alistapart.com/article/node-at-work-a-walkthrough#" class="embed-link">Embed</a>
+								</div>
+								
+																
+								<div class="embed-comment">
+									
+									Copy &amp; paste the code below to embed this comment.
+									<textarea class="embed-code">&lt;figure class="embedded-quote" id="ala-embedded-comment-334801"&gt;&lt;blockquote&gt;	&lt;p&gt;This is the start of my 4th night of working with Node, Express, and doT. It is a big challenge for me. I downloaded the “coolartstore” code from GitHub, got the index.html page from that to render completely as a check on how correctly  I had installed Node and also whether whether there were networking issues. &lt;/p&gt;&lt;p&gt;Then I set out to create my own page, my own template, and my own app, using coolartstore as a guide. My goal: create a doT template which can be rendered to hold the heading “Hello world from Bob”, and then move that template inside the index.html content. The name of the template is hello.dot. &lt;/p&gt;&lt;p&gt;The template renders just fine, that is I can go to http://localhost:3000/hello and see the rendered template. Since it is just an h2 heading inside a div, it of course shows on the browser as black text on a white background. &lt;/p&gt;&lt;p&gt;The index.html page renders just fine, too: I can go to http://localhost:3000/ and see a the page rendered very nicely in coolartstore regalia, since I reused the css. I took out all the coolartstore markup and replaced it with a line of my own, an h1 heading. Only the header and footer content shows. I can’t get the template to render inside the index.html page.&lt;/p&gt;&lt;p&gt;I closely read this article each day. I have two printed copies of it with copious notes penned in the margins. I believe I have to load the hello.dot template into index.html using javascript that is in the script.js file from coolartstore. That must be what is escaping me. I thought Express was using some magic in app.get to cause the template to be injected into the index.html. Since I’m new to JavaScript, that is a fun challenge, too. I’m aware that the Javascript is actually using jQuery. I’m hoping to use plain old Javascript since jQuery would add more complexity to my learning curve.&lt;/p&gt;&lt;p&gt;Tonight I’m hoping to figure out how to get my hello.dot template to work inside the index.html. Slowly I am succeeding.&lt;/p&gt;&lt;/blockquote&gt;&lt;figcaption&gt;— Bob Cochran on &lt;a href="http://alistapart.com/comments/node-at-work-a-walkthrough#334801"&gt;Node at Work: A Walkthrough&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;										
+&lt;script async data-comment="334801" charset="utf-8" src="http://d.alistapart.com/_/js/comment-embed.min.js"&gt;&lt;/script&gt;</textarea>
+									
+									<div class="button-holder">
+										<input type="submit" name="cancel" value="Close" class="cancel-embed">
+									</div>
+								</div>
+								
+							</li>
+							
+							
+							
+							
+														
+														
+														
+							<li id="commenter-signin" class="commenter-signin ">
+							
+								<h3>Got Something to Say?</h3>
+								
+								<p>Discuss this article. We reserve the right to delete flames, trolls, and wood nymphs.</p>
+								
+								<!-- I don't know why, but I had to move the login form above the login options so that EE would generate the current_url correctly. -->
+								<form id="sign-in-form" method="post" action="http://alistapart.com/">
+<div class="hiddenFields">
+<input type="hidden" name="XID" value="ea92b303c154f8eb4fdc2abe931d871c56d6164e">
+<input type="hidden" name="ACT" value="9">
+<input type="hidden" name="RET" value="http://alistapart.com/comments/embed-comments/node-at-work-a-walkthrough/login-return">
+<input type="hidden" name="site_id" value="1">
+</div>
+
+
+								
+									<label for="login-name-here">
+										Username <small>(<a id="show-registration-form" href="http://alistapart.com/utilities/register">need an account?</a>)</small>
+										<input id="login-name-here" name="username" type="text" required="required">
+									</label>
+								
+									<label for="login_password">
+										Password <small>(<a id="show-forgot-password-form" href="http://alistapart.com/utilities/forgot-password">forgotten it?</a>)</small>
+										<input id="login_password" name="password" type="password" required="required">
+									</label>
+									
+									<input type="submit" value="Submit">
+									
+									<p class="never-mind">(<a id="cancel-login" href="http://alistapart.com/comments/embed-comments/node-at-work-a-walkthrough/login-return">never mind</a>)</p>
+								
+								</form>
+								
+								<div id="login-buttons" class="active">
+									<h4>Sign in with:</h4>
+								
+									<ul class="login-buttons">
+										<li class="twitter"><a href="http://alistapart.com/?ACT=59&provider=twitter&RET=http://alistapart.com/comments/embed-comments/node-at-work-a-walkthrough/login-return">Twitter</a></li><!--
+										--><li class="facebook"><a href="http://alistapart.com/?ACT=59&provider=facebook&RET=http://alistapart.com/comments/embed-comments/node-at-work-a-walkthrough/login-return">Facebook</a></li><!--
+										--><li class="ala"><a id="show-native-login" href="http://alistapart.com/login">A List Apart</a></li>
+									</ul>
+								</div>
+								
+								<form id="forgot_password_form" method="post" action="http://alistapart.com/">
+<div class="hiddenFields">
+<input type="hidden" name="XID" value="5b671c02f3a89b9ae62cd84d94053bcaaae0c286">
+<input type="hidden" name="ACT" value="25">
+<input type="hidden" name="RET" value="">
+<input type="hidden" name="params_id" value="TOvQsVjyfedesypIBbkKcKGPe">
+<input type="hidden" name="site_id" value="1">
+</div>
+
+
+								
+									<h4>We can reset that for you:</h4>
+ 
+									<label for="reset-email-here">
+								        Your email address
+								        <input id="reset-email-here" type="email" name="email">
+								    </label>
+								    
+									<input type="submit" value="Reset Password">
+									
+									<p class="never-mind">(<a id="cancel-password-reset" href="http://alistapart.com/article/M220o93H7pQ09L8X1t49cHY01Z5j4TT91fGfr/login-return">never mind</a>)</p>
+								 
+								</form>
+								
+								<form class="sign-in-form" id="register-form" method="post" action="http://alistapart.com/">
+<div class="hiddenFields">
+<input type="hidden" name="XID" value="2d8495a49d6f1fc60133bac91648115edf2238ab">
+<input type="hidden" name="ACT" value="23">
+<input type="hidden" name="RET" value="http://alistapart.com/comments/embed-comments/node-at-work-a-walkthrough/login-return">
+<input type="hidden" name="params_id" value="sOQOuhhSSBfmTfaBhxbtJYvta">
+<input type="hidden" name="site_id" value="1">
+</div>
+
+
+								
+									<h4>Create an account:</h4>
+									
+									<label for="new-username-here">
+										New username
+										<input id="new-username-here" type="text" name="username" placeholder="jsmith" required="required">
+									</label>
+									
+									<label for="new-screen-name">
+										New screen name
+										<input id="new-screen-name" name="screen_name" type="text" placeholder="Jane Smith" required="required">
+									</label>
+									
+									<label for="new-email-here">
+										New email address
+										<input id="new-email-here" type="email" name="email" placeholder="you@yours.com" required="required">
+									</label>
+									
+									<label for="new-password-here">
+										New password
+										<input id="new-password-here" type="password" name="password" required="required">
+									</label>
+									
+									<label for="new-password-confirm-here">
+										Confirm new password
+										<input id="new-password-confirm-here" type="password" name="password_confirm" required="required">
+									</label>
+									
+																		
+									
+									
+									<input type="submit" value="Submit">
+									
+									<p class="never-mind">(<a id="cancel-registration" href="http://alistapart.com/article/M220o93H7pQ09L8X1t49cHY01Z5j4TT91fGfr/login-return">never mind</a>)</p>
+								 
+								</form>
+							
+							</li>
+	
+	
+														
+														
+							
+							
+						</ol></section>
+					
+					<aside class="column more-content">
+					
+						
+						<h1 class="classy">More from ALA</h1>
+						
+						
+						
+												<h2>Columns</h2>
+												
+												<article class="item-summary article">
+				
+							<span class="column-name">Rachel Andrew <i>on</i> the Business of Web Dev</span>
+				
+							<h1><a href="http://alistapart.com/column/you-cant-do-everything">You Can’t Do Everything</a></h1>
+				
+												
+										<img src="./list-apart_files/photo_131322_60_60_c1.jpg" alt="">
+										
+					
+							<p>In any given day I can find myself reading up on a new W3C proposal, fixing an issue with our tax return, coding an add-on for our product, writing a conference presentation, building a server, creating a video tutorial, and doing front end development for one of our sites. Without clients dictating my workload I’m in the enviable position of being able to choose where to focus my efforts. However, I can’t physically do everything.</p>
+					
+							<footer class="byline">
+								<time class="pubdate updated" datetime="2013-05-09T08:30:53-05:00">May 09, 2013</time>
+							</footer>
+						
+						</article>
+						
+						
+						
+												
+												<article class="item-summary article">
+				
+							<span class="column-name">Karen McGrane <i>on</i> Content</span>
+				
+							<h1><a href="http://alistapart.com/column/wysiwtf">WYSIWTF</a></h1>
+				
+												
+										<img src="./list-apart_files/photo_122631_60_60_c1.jpg" alt="">
+										
+					
+							<p>Arguing for “separation of content from presentation” implies a neat division between the two. The reality, of course, is that content and form, structure and style, can never be fully separated. Anyone who’s ever written a document and played around to see the impact of different fonts, heading weights, and whitespace on the way the writing flows knows this is true. Anyone who’s ever squinted at HTML code, trying to parse text from tags, knows it too.</p>
+					
+							<footer class="byline">
+								<time class="pubdate updated" datetime="2013-05-02T07:43:20-05:00">May 02, 2013</time>
+							</footer>
+						
+						</article>
+						
+						
+						
+						
+						
+												<h2>From the Blog</h2>
+												
+												<article class="item-summary article">
+					
+							<h1><a href="http://alistapart.com/blog/post/breaking-the-1000ms-time-to-glass-mobile-barrier">Breaking the 1000ms Time to Glass Mobile Barrier</a></h1>
+							
+							<p>Ilya Grigorik discusses in detail how to construct a mobile website that loads as quickly as possible. A site that not only renders in 1 second, but one that is also visible in 1 second. </p>							
+							<footer>
+								<a class="aside-author" href="http://alistapart.com/author/murtaugh">Tim Murtaugh</a>
+								<time class="pubdate updated" datetime="2013-05-08T13:03:31-05:00"><a href="http://alistapart.com/blog/post/breaking-the-1000ms-time-to-glass-mobile-barrier">May 08, 2013</a></time>
+							</footer>
+						
+						</article>
+												
+						
+						
+												
+												<article class="item-summary article">
+					
+							<h1><a href="http://alistapart.com/blog/post/magic-numbers-and-progressive-enhancement">Magic Numbers and Progressive Enhancement</a></h1>
+							
+							<p>Progressive enhancement is part of typography now. First, style text in a generic way. Then, if the fonts you intend are active, follow up with rules that depend on the presence (and dimensions) of those fonts.</p>							
+							<footer>
+								<a class="aside-author" href="http://alistapart.com/author/timbrown">Tim Brown</a>
+								<time class="pubdate updated" datetime="2013-04-30T14:23:32-05:00"><a href="http://alistapart.com/blog/post/magic-numbers-and-progressive-enhancement">April 30, 2013</a></time>
+							</footer>
+						
+						</article>
+												
+						
+						
+												
+												<article class="item-summary link-post">
+			
+							<h1><a href="https://github.com/rwldrn/idiomatic.js/">Principles of Writing Consistent, Idiomatic JavaScript</a></h1>
+					
+							<p>If you’re looking for a thorough JavaScript style guide for your team, <a href="https://twitter.com/rwaldron">Rick Waldron</a>’s <i>Principles of Writing Consistent, Idiomatic JavaScript</i> is a great place to start.</p>					
+							<footer>
+								github.com
+								
+							</footer>
+				
+						</article>
+												
+						
+						
+												
+												<article class="item-summary link-post">
+			
+							<h1><a href="http://breakpoint-sass.com/">Breakpoint: Really Simple, Organized, Media Queries with Sass</a></h1>
+					
+							<p>Breakpoint is a Compass extension designed to simplify the creation and management of media queries.</p>					
+							<footer>
+								breakpoint-sass.com
+								
+							</footer>
+				
+						</article>
+												
+						
+						
+												
+												<article class="item-summary link-post">
+			
+							<h1><a href="http://www.unheap.com/">Unheap: A Tidy Repository of jQuery Plugins</a></h1>
+					
+							<p>A nice-to-look-at, easy-to-use reference library of jQuery plugins.</p>					
+							<footer>
+								www.unheap.com
+								
+								 ∙ ℅ <a class="attribution-link" href="https://twitter.com/candicodeit/status/327429516530159617">@candicodeit</a>
+								
+							</footer>
+				
+						</article>
+												
+						
+						
+						
+						
+												
+						<aside class="job-board">
+							<h4>Gratitude</h4>
+							<p>Send some love to creative talent agency <a href="http://vitamintalent.com/">Vitamin T</a> for bringing you this week's RSS feed!</p>
+						</aside><!--
+						
+						--><aside class="the-deck">
+							<div class="deck-inner">
+								<script>
+									//<![CDATA[
+									(function(id) {
+									  document.write('<script type="text/javascript" src="' +
+									    'http://www.northmay.com/deck/deck' + id + '_js.php?' +
+									    (new Date().getTime()) + '"></' + 'script>');
+									})("AL");
+									//]]>
+								</script><script type="text/javascript" src="./list-apart_files/deckAL_js.php"></script><a href="http://hike.in/blog/awesome/celebrating-apples-50-billionth-app-download-milestone/"><img class="ad" alt="Hike" src="./list-apart_files/hike_applepromo.png" border="0" width="120" height="90"></a><p class="ads">Download hike. <a href="http://hike.in/blog/awesome/celebrating-apples-50-billionth-app-download-milestone/">Win $100k worth of Apple products</a>. Messaging made personal again.</p>
+								<p><a href="http://www.coudal.com/deck/">Ad via The Deck</a></p>
+							</div>
+						</aside><!--
+						
+						--><aside class="job-board">
+							<h4>Job Board</h4>
+							<script src="./list-apart_files/job.fcgi"></script><div class="job">
+  <a href="http://jobs.37signals.com/jobs/12824">Yella is looking for a Sr. Front-End Developer.</a>
+</div>
+
+
+							<p class="board-link">More on the <a href="http://jobs.37signals.com/?source=ala">Job Board</a></p>
+						</aside>
+
+					
+					</aside>
+				
+				</div>
+				
+			</div>
+		
+		</article>
+		
+				<footer class="global-footer">
+			
+			<h1 class="deadly-subtitle">For people who make websites.</h1>
+			
+			<ul class="inline-items">
+				<li><a href="http://alistapart.com/about">About</a></li>
+				<li><a href="http://alistapart.com/authors">Authors</a></li>
+				<li><a href="http://alistapart.com/about/masthead">Masthead</a></li>
+				<li><a href="http://alistapart.com/about/contribute">Contribute</a></li>
+				<li><a href="http://alistapart.com/about/style-guide">Style Guide</a></li>
+				<li><a href="http://alistapart.com/contact">Contact</a></li>
+				<li><a href="http://alistapart.com/about/sponsor">Sponsorships</a></li>
+				<li class="head-east-young-man">
+					
+					Follow us: 
+					<a href="http://alistapart.com/about/rss">RSS</a> · 
+					<a href="http://www.facebook.com/alistapart">Facebook</a> · 
+					<a href="http://www.twitter.com/alistapart">Twitter</a>
+					
+				</li>
+			</ul>
+			
+			<aside class="promo-holder">
+			
+				<ul class="partner-promos">
+					<li>
+						<a href="http://abookapart.com/">
+							<img src="./list-apart_files/promo_aba.png" alt="">
+							<h1>A Book Apart</h1>
+							<p>Mobile First &amp; Responsive Web Design bundle.</p>
+							<p>Buy both and save!</p>
+							<p class="arrow">Order now</p>
+						</a>
+					</li><!--
+					
+					--><li>
+						<a href="http://aneventapart.com/">
+							<img src="./list-apart_files/promo_aea.png" alt="">
+							<h1>An Event Apart</h1>
+							<p>Three days of design, code, and content for people who make websites.</p>
+							<p class="arrow">See the 2013 schedule</p>
+						</a>
+					</li>
+				</ul>
+			
+			</aside>
+			
+			<ul class="inline-items copyright">
+			
+				<li>
+					<small>ISSN 1534-0295 · Copyright © 1998-2013 A List Apart &amp; Our Authors</small>
+					<small><a href="http://alistapart.com/about/copyright">Permissions &amp; Copyright</a> · <a href="http://webtype.com/">Fonts by Webtype</a></small></li>
+			
+				<li class="affiliates head-east-young-man">
+					
+					<a class="aea" href="http://aneventapart.com/" title="An Event Apart">An Event Apart</a>
+					<a class="aba" href="http://abookapart.com/" title="A Book Apart">A Book Apart</a>
+					<a class="hc" href="http://happycog.com/" title="Happy Cog">Happy Cog</a>
+					<!--<a class="eh" href="http://enginehosting.com" title="Engine Hosting">Engine Hosting</a>-->
+					
+				</li>
+				
+			</ul>
+			
+		</footer>
+	
+	</div>
+	
+	
+	<nav class="global-nav" role="navigation">
+	
+		<ul class="inline-items">
+			<li><a href="http://alistapart.com/">Home</a></li>
+			<li><a href="http://alistapart.com/articles">Articles</a></li>
+			<li><a href="http://alistapart.com/columns">Columns</a></li>
+			<li><a href="http://alistapart.com/blog">Blog</a></li>
+			<li><a href="http://alistapart.com/topics">Topics</a></li>
+			<li class="head-east-young-man">
+				<form class="main-search" method="post" action="http://alistapart.com/">
+<div class="hiddenFields">
+<input type="hidden" name="ACT" value="19">
+<input type="hidden" name="XID" value="a71e1d65c04860c2776c890b42a5c4aa99a17e28">
+<input type="hidden" name="RES" value="">
+<input type="hidden" name="meta" value="Ffseekua+rUE8oK/pEbUJWWxDpWf2BoUqFDIvQXjhXZvhxjFg5cTF6MP3Rxtt3h0gzE57XPQfXWvg0nj9Y1Ez9CgWwEnGRAY6knFpH19HNpmm1rhGuRr9ebnQRbp5gzUuAi3HijGA9yRR/+duNMWasUPa0S3ri5kufvn1cJZoXtDEJrakAi4Zi6hXmR7jAoMS32IN2Nnt91qJWBa39w1AJV8sd0qnhHhIINlcsb02vkMpG4eYA2mBCdk4rLBnTtcWm9lsqpzcAbw41a/SSQd1uwuL6FhRywCkesIprmpX/V39TUIrB+WBENjD8PfBNuRIPltmq7vNFIS4c6H83tmAdIBYa09YmGift5UU60UI5sm+GsyNXJMWvj4CA9wCX3q">
+<input type="hidden" name="site_id" value="1">
+</div>
+
+
+					<label for="search-keywords"><input id="search-keywords" type="search" name="keywords" placeholder="Search" aria-label="Search" value="" required="required"></label>
+					<label class="submit-search" for="submit-search"><input id="submit-search" name="submit" type="image" src="./list-apart_files/loup.png" alt="Submit"></label>
+				</form>
+			</li>
+		</ul>
+	
+	</nav>
+
+		
+
+	<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+		 chromium.org/developers/how-tos/chrome-frame-getting-started -->
+	<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+	
+	<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+	<script src="./list-apart_files/jquery.min.js"></script>
+	<script>window.jQuery || document.write('/d/_/js/libs/jquery-1.8.2.min.js"><\/script>')</script>
+
+
+</body></html>

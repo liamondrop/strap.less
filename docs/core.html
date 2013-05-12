@@ -12,6 +12,13 @@
     <link href="../less/skin/responsive.less" rel="stylesheet/less">
     <link href="assets/css/docs.css" rel="stylesheet">
     <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <script type="text/javascript">
+      less = {
+        env: "development", // or "production"
+        poll: 2000,         // when in watch mode, time in ms between polls
+        dumpLineNumbers: "mediaquery",
+      };
+    </script>
     <script src="../js/less.min.js"></script>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -39,10 +46,10 @@
           <a class="brand" href="./index.html">Strap.less</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="">
+              <li class="active">
                 <a href="./index.html">Home</a>
               </li>
-              <li class="active">
+              <li class="">
                 <a href="./grid.html">Grid</a>
               </li>
               <li class="">

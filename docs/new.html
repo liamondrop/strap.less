@@ -2,18 +2,21 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Strap.less Documentation · Strap.less</title>
 
-<title>
-  
-    Bootstrap Documentation · Bootstrap
-  
-</title>
-
-<!-- Bootstrap core CSS -->
-<link href="./new_files/bootstrap.css" rel="stylesheet">
+<!-- Strap.less core CSS -->
+<link href="../less/skin/strap.less" rel="stylesheet/less">
+<script type="text/javascript">
+  less = {
+    env: "development", // or "production"
+    poll: 2000,         // when in watch mode, time in ms between polls
+    dumpLineNumbers: "all",
+  };
+</script>
+<script src="./assets/js/less.min.js"></script>
 
 
 <!-- Documentation extras -->
@@ -38,13 +41,13 @@
     <!-- Docs nav -->
     <div class="bs-docs-sidebar">
   <ul class="nav bs-docs-sidenav">
-    <h3 class="bs-docs-sidenav-heading"><a href="http://v3.bootcss.com/">Bootstrap</a></h3>
+    <h3 class="bs-docs-sidenav-heading"><a href="http://v3.bootcss.com/">Strap.less</a></h3>
 
     <li class=""><a href="#welcome">Welcome!</a></li>
     <li class=""><a href="#getting-started">Getting started</a></li>
     <li class=""><a href="#whats-included">What's included</a></li>
     <li class=""><a href="#examples">Templates and examples</a></li>
-    <li class=""><a href="#customizing">Customizing Bootstrap</a></li>
+    <li class=""><a href="#customizing">Customizing Strap.less</a></li>
 
     <!-- CSS -->
     <li class=""><a class="nav-header" href="#css">CSS</a></li>
@@ -271,7 +274,7 @@
   ================================================== -->
   <div id="welcome" class="bs-docs-section-header">
     <h1>Welcome</h1>
-    <p class="lead">Welcome to the Bootstrap documentation, the living, interactive style and code guide for all things Bootstrap. If you're new here, continue reading to learn how to get started. Otherwise, carry on you beautiful person you.</p>
+    <p class="lead">Welcome to the Strap.less documentation, the living, interactive style and code guide for all things Strap.less. If you're new here, continue reading to learn how to get started. Otherwise, carry on you beautiful person you.</p>
   </div>
 
   <!-- Getting started
@@ -280,41 +283,41 @@
     <div class="page-header">
       <h1>Getting started</h1>
     </div>
-    <p class="lead">There are a few easy ways to quickly get started with Bootstrap, each one appealing to a different skill level and use case. Read through to see what suits your particular needs.</p>
+    <p class="lead">There are a few easy ways to quickly get started with Strap.less, each one appealing to a different skill level and use case. Read through to see what suits your particular needs.</p>
 
     <h3>Download compiled CSS and JS</h3>
     <p class="lead">The fastest way to get started is to get the compiled and minified versions of our CSS, JavaScript, and fonts. No documentation or original source files are included.</p>
-    <p><a class="btn btn-large btn-primary" href="http://v3.bootcss.com/docs/assets/bootstrap.zip" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;Getting started&#39;, &#39;Download&#39;, &#39;Download compiled&#39;]);">Download Bootstrap</a></p>
+    <p><a class="btn btn-large btn-primary" href="http://v3.bootcss.com/docs/assets/Strap.less.zip" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;Getting started&#39;, &#39;Download&#39;, &#39;Download compiled&#39;]);">Download Strap.less</a></p>
 
     <hr>
 
     <h3 id="download-options">More download options</h3>
     <div class="bs-docs-dl-options">
       <h4>
-        <a href="https://github.com/twitter/bootstrap/zipball/master" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;Getting started&#39;, &#39;Download&#39;, &#39;Download source&#39;]);">Download latest source code</a>
+        <a href="https://github.com/twitter/Strap.less/zipball/master" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;Getting started&#39;, &#39;Download&#39;, &#39;Download source&#39;]);">Download latest source code</a>
       </h4>
       <p>Get the original files for all CSS and JavaScript by downloading the latest version directly from GitHub.</p>
       <h4>
-        <a href="https://github.com/twitter/bootstrap/" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;Getting started&#39;, &#39;Download&#39;, &#39;GitHub project&#39;]);">Clone or fork via GitHub</a>
+        <a href="https://github.com/twitter/Strap.less/" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;Getting started&#39;, &#39;Download&#39;, &#39;GitHub project&#39;]);">Clone or fork via GitHub</a>
       </h4>
-      <p>Clone the entire project or fork your own version of Bootstrap to make it your own by visiting us on GitHub.</p>
+      <p>Clone the entire project or fork your own version of Strap.less to make it your own by visiting us on GitHub.</p>
       <h4>
         Install with <a href="http://twitter.github.com/bower">Bower</a>
       </h4>
       <p>Install and manage the original files for all CSS and JavaScript, along with a local copy of the docs, using <a href="http://twitter.github.com/bower">Bower</a>.</p>
-      <div class="highlight"><pre><code class="bash"><span class="nv">$ </span>bower install bootstrap
+      <div class="highlight"><pre><code class="bash"><span class="nv">$ </span>bower install Strap.less
 </code></pre></div>
     </div>
 
     <hr>
 
-    <h3 id="bootstrap-cdn">Use the Bootstrap CDN</h3>
-    <p>The folks over at <a href="https://www.netdna.com/">NetDNA</a> have graciously provided CDN support for Bootstrap's CSS and JavaScript. To use, swap your local instances for the <a href="http://www.bootstrapcdn.com/">Bootstrap CDN</a> links listed below.</p>
+    <h3 id="Strap.less-cdn">Use the Strap.less CDN</h3>
+    <p>The folks over at <a href="https://www.netdna.com/">NetDNA</a> have graciously provided CDN support for Strap.less's CSS and JavaScript. To use, swap your local instances for the <a href="http://www.Strap.lesscdn.com/">Strap.less CDN</a> links listed below.</p>
 <div class="highlight"><pre><code class="html"><span class="c">&lt;!-- Latest compiled and minified CSS --&gt;</span>
-<span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"//netdna.Strap.lesscdn.com/Strap.less/3.0.0/css/Strap.less.min.css"</span><span class="nt">&gt;</span>
 
 <span class="c">&lt;!-- Latest compiled and minified JavaScript --&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//netdna.Strap.lesscdn.com/Strap.less/3.0.0/js/Strap.less.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </code></pre></div>
   </div>
 
@@ -325,15 +328,15 @@
       <h1>What's included</h1>
     </div>
     <p class="lead">Within the download you'll find the following directories and files, logically grouping common assets and providing both compiled and minified variations.</p>
-    <p>Once downloaded, unzip the compressed folder to see the structure of (the compiled) Bootstrap. You'll see something like this:</p>
+    <p>Once downloaded, unzip the compressed folder to see the structure of (the compiled) Strap.less. You'll see something like this:</p>
 
-<div class="highlight"><pre><code class="bash">  bootstrap/
+<div class="highlight"><pre><code class="bash">  Strap.less/
   ├── css/
-  │   ├── bootstrap.css
-  │   ├── bootstrap.min.css
+  │   ├── Strap.less.css
+  │   ├── Strap.less.min.css
   ├── js/
-  │   ├── bootstrap.js
-  │   ├── bootstrap.min.js
+  │   ├── Strap.less.js
+  │   ├── Strap.less.min.js
   └── fonts/
       ├── glyphiconshalflings-regular.eot
       ├── glyphiconshalflings-regular.otf
@@ -342,7 +345,7 @@
       └── glyphiconshalflings-regular.woff
 </code></pre></div>
 
-    <p>This is the most basic form of Bootstrap: compiled files for quick drop-in usage in nearly any web project. We provide compiled CSS and JS (<code>bootstrap.*</code>), as well as compiled and minified CSS and JS (<code>bootstrap.min.*</code>). The image files are compressed using <a href="http://imageoptim.com/">ImageOptim</a>, a Mac app for compressing PNGs.</p>
+    <p>This is the most basic form of Strap.less: compiled files for quick drop-in usage in nearly any web project. We provide compiled CSS and JS (<code>Strap.less.*</code>), as well as compiled and minified CSS and JS (<code>Strap.less.min.*</code>). The image files are compressed using <a href="http://imageoptim.com/">ImageOptim</a>, a Mac app for compressing PNGs.</p>
     <div class="bs-docs-sidenote">
       <h4>jQuery required</h4>
       <p>Please note that <strong>all JavaScript plugins require jQuery</strong> to be included, as shown in the <a href="#examples">starter template</a>.</p>
@@ -358,14 +361,14 @@
     <p class="lead">Make use of a super basic HTML template, or dive into a few examples we've started for you. We encourage folks to iterate on these examples and not simply use them as an end result.</p>
 
     <h3>HTML template</h3>
-    <p>Copy and paste the HTML from below to get started with a bare bones Bootstrap document.</p>
+    <p>Copy and paste the HTML from below to get started with a bare bones Strap.less document.</p>
 <div class="highlight"><pre><code class="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
   <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;title&gt;</span>Bootstrap 101 Template<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Strap.less 101 Template<span class="nt">&lt;/title&gt;</span>
     <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="nt">&gt;</span>
-    <span class="c">&lt;!-- Bootstrap --&gt;</span>
-    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"css/bootstrap.min.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">media=</span><span class="s">"screen"</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- Strap.less --&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"css/Strap.less.min.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">media=</span><span class="s">"screen"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;/head&gt;</span>
   <span class="nt">&lt;body&gt;</span>
     <span class="nt">&lt;h1&gt;</span>Hello, world!<span class="nt">&lt;/h1&gt;</span>
@@ -373,7 +376,7 @@
     <span class="c">&lt;!-- JavaScript plugins (requires jQuery) --&gt;</span>
     <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://code.jquery.com/jquery.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
     <span class="c">&lt;!-- Include all compiled plugins (below), or include individual files as needed --&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"js/bootstrap.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"js/Strap.less.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 
     <span class="c">&lt;!-- Optionally enable responsive features in IE8 --&gt;</span>
     <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"js/respond.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
@@ -385,63 +388,63 @@
     <div class="row bs-docs-examples">
       <div class="col col-lg-4">
         <a class="thumbnail" href="http://v3.bootcss.com/examples/starter-template/" target="_blank">
-          <img src="./new_files/bootstrap-example-starter.png" alt="">
+          <img src="./new_files/Strap.less-example-starter.png" alt="">
         </a>
         <h4>Starter template</h4>
-        <p>A barebones HTML page with Bootstrap's CSS and JavaScript included.</p>
+        <p>A barebones HTML page with Strap.less's CSS and JavaScript included.</p>
       </div>
       <div class="col col-lg-4">
         <a class="thumbnail" href="http://v3.bootcss.com/examples/grid/" target="_blank">
-          <img src="./new_files/bootstrap-example-grid.png" alt="">
+          <img src="./new_files/Strap.less-example-grid.png" alt="">
         </a>
         <h4>Basic grid layouts</h4>
-        <p>Simple grid layouts to familiarize you with using the Bootstrap grid system.</p>
+        <p>Simple grid layouts to familiarize you with using the Strap.less grid system.</p>
       </div>
       <div class="col col-lg-4">
         <a class="thumbnail" href="http://v3.bootcss.com/examples/jumbotron/" target="_blank">
-          <img src="./new_files/bootstrap-example-marketing.png" alt="">
+          <img src="./new_files/Strap.less-example-marketing.png" alt="">
         </a>
         <h4>Basic marketing site</h4>
         <p>Features a jumbotron for primary message and three supporting elements.</p>
       </div>
       <div class="col col-lg-4">
         <a class="thumbnail" href="http://v3.bootcss.com/examples/jumbotron-narrow/" target="_blank">
-          <img src="./new_files/bootstrap-example-jumbotron-narrow.png" alt="">
+          <img src="./new_files/Strap.less-example-jumbotron-narrow.png" alt="">
         </a>
         <h4>Narrow marketing</h4>
         <p>Slim, lightweight marketing template for small projects or teams.</p>
       </div>
       <div class="col col-lg-4">
         <a class="thumbnail" href="http://v3.bootcss.com/examples/justified-nav/" target="_blank">
-          <img src="./new_files/bootstrap-example-justified-nav.png" alt="">
+          <img src="./new_files/Strap.less-example-justified-nav.png" alt="">
         </a>
         <h4>Justified nav</h4>
         <p>Marketing page with equal-width navigation links in a modified navbar.</p>
       </div>
       <div class="col col-lg-4">
         <a class="thumbnail" href="http://v3.bootcss.com/examples/signin/" target="_blank">
-          <img src="./new_files/bootstrap-example-signin.png" alt="">
+          <img src="./new_files/Strap.less-example-signin.png" alt="">
         </a>
         <h4>Sign in</h4>
         <p>Barebones sign in form with custom, larger form controls and a flexible layout.</p>
       </div>
       <div class="col col-lg-4">
         <a class="thumbnail" href="http://v3.bootcss.com/examples/sticky-footer/" target="_blank">
-          <img src="./new_files/bootstrap-example-sticky-footer.png" alt="">
+          <img src="./new_files/Strap.less-example-sticky-footer.png" alt="">
         </a>
         <h4>Sticky footer</h4>
         <p>Pin a fixed-height footer to the bottom of the user's viewport.</p>
       </div>
       <div class="col col-lg-4">
         <a class="thumbnail" href="http://v3.bootcss.com/examples/sticky-footer-navbar/" target="_blank">
-          <img src="./new_files/bootstrap-example-sticky-footer-navbar.png" alt="">
+          <img src="./new_files/Strap.less-example-sticky-footer-navbar.png" alt="">
         </a>
         <h4>Sticky footer w/ navbar</h4>
         <p>Add a fixed navbar to the default sticky footer template.</p>
       </div>
       <div class="col col-lg-4">
         <a class="thumbnail" href="http://v3.bootcss.com/examples/carousel/" target="_blank">
-          <img src="./new_files/bootstrap-example-carousel.png" alt="">
+          <img src="./new_files/Strap.less-example-carousel.png" alt="">
         </a>
         <h4>Carousel jumbotron</h4>
         <p>An interactive riff on the basic marketing site featuring a prominent carousel.</p>
@@ -449,21 +452,21 @@
 
       <div class="col col-lg-4">
         <a class="thumbnail" href="http://v3.bootcss.com/examples/navbar/" target="_blank">
-          <img src="./new_files/bootstrap-example-navbar.png" alt="">
+          <img src="./new_files/Strap.less-example-navbar.png" alt="">
         </a>
         <h4>Navbar</h4>
         <p>Basic template for showcasing how the navbar works.</p>
       </div>
       <div class="col col-lg-4">
         <a class="thumbnail" href="http://v3.bootcss.com/examples/navbar-static-top/" target="_blank">
-          <img src="./new_files/bootstrap-example-navbar-static-top.png" alt="">
+          <img src="./new_files/Strap.less-example-navbar-static-top.png" alt="">
         </a>
         <h4>Static top navbar</h4>
         <p>Basic template for showcasing the static navbar variation.</p>
       </div>
       <div class="col col-lg-4">
         <a class="thumbnail" href="http://v3.bootcss.com/examples/navbar-fixed-top/" target="_blank">
-          <img src="./new_files/bootstrap-example-navbar-fixed-top.png" alt="">
+          <img src="./new_files/Strap.less-example-navbar-fixed-top.png" alt="">
         </a>
         <h4>Fixed top navbar</h4>
         <p>Basic template for showcasing the fixed navbar variation.</p>
@@ -476,23 +479,23 @@
 
   <div class="bs-docs-section" id="customizing">
     <div class="page-header">
-      <h1>Customizing Bootstrap</h1>
+      <h1>Customizing Strap.less</h1>
     </div>
-    <p class="lead">Customizing Bootstrap is best accomplished when you treat it as another dependency in your development stack. Doing so ensures future upgrades are as easy as possible while also familiarizing yourself to the intricacies of the framework.</p>
+    <p class="lead">Customizing Strap.less is best accomplished when you treat it as another dependency in your development stack. Doing so ensures future upgrades are as easy as possible while also familiarizing yourself to the intricacies of the framework.</p>
 
-    <p>Once you've downloaded and included Bootstrap's CSS into your templates, you can move on to customizing the included components. To do so, create a new stylesheet (LESS, if you like, or just plain CSS) to house your customizations.</p>
+    <p>Once you've downloaded and included Strap.less's CSS into your templates, you can move on to customizing the included components. To do so, create a new stylesheet (LESS, if you like, or just plain CSS) to house your customizations.</p>
 
     <div class="bs-docs-sidenote">
       <h4>Compiled or minified?</h4>
       <p>Unless you plan on reading a good chunk of the compiled CSS, go with the minified. It's the same code, just compacted. Less bandwidth is good, especially in production environments.</p>
     </div>
 
-    <p>From there, include whatever Bootstrap components and HTML content you need to get your template setup. It's best to have a rough idea in mind of modifications to make and content to include, so be sure to spend a brief amount of time on that before moving on.</p>
+    <p>From there, include whatever Strap.less components and HTML content you need to get your template setup. It's best to have a rough idea in mind of modifications to make and content to include, so be sure to spend a brief amount of time on that before moving on.</p>
 
     <h3>Customizing components</h3>
     <p>There are varying degrees to customizing components, but most fall into two camps: light customizations and complete visual overhauls. Luckily, there are plenty of examples of both.</p>
-    <p>We define light customizations as mostly surface layer changes, things like a color and font changes to existing Bootstrap components. A great example of this is the the <a href="http://translate.twitter.com/">Twitter Translation Center</a> (coded by @mdo). Let's look at how to implement the custom button we wrote for this site, <code>.btn-ttc</code>.</p>
-    <p>Instead of using the provided Bootstrap buttons, which only require just one class to start, <code>.btn</code>, we'll add our own modifier class, <code>.btn-ttc</code>. This will give us a slightly custom look with minimal effort.</p>
+    <p>We define light customizations as mostly surface layer changes, things like a color and font changes to existing Strap.less components. A great example of this is the the <a href="http://translate.twitter.com/">Twitter Translation Center</a> (coded by @mdo). Let's look at how to implement the custom button we wrote for this site, <code>.btn-ttc</code>.</p>
+    <p>Instead of using the provided Strap.less buttons, which only require just one class to start, <code>.btn</code>, we'll add our own modifier class, <code>.btn-ttc</code>. This will give us a slightly custom look with minimal effort.</p>
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-ttc"</span><span class="nt">&gt;</span>Save changes<span class="nt">&lt;/button&gt;</span>
 </code></pre></div>
 
@@ -526,22 +529,22 @@
 <span class="p">}</span>
 </code></pre></div>
 
-    <p>Customizing Bootstrap components takes time, but should be straightforward. <strong>Look to the source code often and duplicate the selectors you need for your modifications.</strong> Placing them after the Bootstrap source makes for easy overriding without complication. <strong>To recap, here's the basic workflow:</strong></p>
+    <p>Customizing Strap.less components takes time, but should be straightforward. <strong>Look to the source code often and duplicate the selectors you need for your modifications.</strong> Placing them after the Strap.less source makes for easy overriding without complication. <strong>To recap, here's the basic workflow:</strong></p>
     <ul>
-      <li>For each element you want to customize, find its code in the compiled Bootstrap CSS. Copy and paste the selector for a component as-is. For instance, to customize the navbar background, just snag <code>.navbar</code>.</li>
-      <li>Add all your custom CSS in a separate stylesheet using the selectors you just copied from the Bootstrap source. No need for prefacing with additional classes or using <code>!important</code> here.</li>
+      <li>For each element you want to customize, find its code in the compiled Strap.less CSS. Copy and paste the selector for a component as-is. For instance, to customize the navbar background, just snag <code>.navbar</code>.</li>
+      <li>Add all your custom CSS in a separate stylesheet using the selectors you just copied from the Strap.less source. No need for prefacing with additional classes or using <code>!important</code> here.</li>
       <li>Rinse and repeat until you're happy with your customizations.</li>
     </ul>
-    <p>Going beyond light customizations and into visual overhauls is just as straightforward as the above custom button. For a site like <a href="http://yourkarma.com/">Karma</a>, which uses Bootstrap as a CSS reset with heavy modifications, more extensive work is involved, but well worth it in the end.</p>
+    <p>Going beyond light customizations and into visual overhauls is just as straightforward as the above custom button. For a site like <a href="http://yourkarma.com/">Karma</a>, which uses Strap.less as a CSS reset with heavy modifications, more extensive work is involved, but well worth it in the end.</p>
 
     <div class="bs-docs-sidenote">
       <h4>Alternate customization methods</h4>
-      <p>While not recommended for folks new to Bootstrap, you may use one of two alternate methods for customization. The first is modifying the source .less files (making upgrades super difficult), and the second is mapping source LESS code to <a href="http://ruby.bvision.com/blog/please-stop-embedding-bootstrap-classes-in-your-html">your own classes via mixins</a>. For the time being, neither options are documented here.</p>
+      <p>While not recommended for folks new to Strap.less, you may use one of two alternate methods for customization. The first is modifying the source .less files (making upgrades super difficult), and the second is mapping source LESS code to <a href="http://ruby.bvision.com/blog/please-stop-embedding-Strap.less-classes-in-your-html">your own classes via mixins</a>. For the time being, neither options are documented here.</p>
     </div>
 
     <h3>Removing potential bloat</h3>
-    <p>Not all sites and applications need to make use of everything Bootstrap has to offer, especially in production environments where bandwidth literally becomes a financial issue. We encourage folks to remove whatever is unused with our <a href="http://v3.bootcss.com/docs/customizer/">Customizer</a>.</p>
-    <p>Using the Customizer, simply uncheck any component, feature, or asset you don't need. Hit download and swap out the default Bootstrap files with these newly customized ones. You'll get vanilla Bootstrap, but without the features *you* deem unnecessary. All custom builds include compiled and minified versions, so use whichever works for you.</p>
+    <p>Not all sites and applications need to make use of everything Strap.less has to offer, especially in production environments where bandwidth literally becomes a financial issue. We encourage folks to remove whatever is unused with our <a href="http://v3.bootcss.com/docs/customizer/">Customizer</a>.</p>
+    <p>Using the Customizer, simply uncheck any component, feature, or asset you don't need. Hit download and swap out the default Strap.less files with these newly customized ones. You'll get vanilla Strap.less, but without the features *you* deem unnecessary. All custom builds include compiled and minified versions, so use whichever works for you.</p>
 
   </div>
 
@@ -554,16 +557,16 @@
     <p class="lead">Fundamental HTML elements styled and enhanced with extensible classes.</p>
   </div>
 
-  <!-- Global Bootstrap settings
+  <!-- Global Strap.less settings
   ================================================== -->
   <div class="bs-docs-section" id="css-overview">
     <div class="page-header">
       <h1>Overview</h1>
     </div>
-    <p class="lead">Get the lowdown on the key pieces of Bootstrap's infrastructure, including our approach to better, faster, stronger web development.</p>
+    <p class="lead">Get the lowdown on the key pieces of Strap.less's infrastructure, including our approach to better, faster, stronger web development.</p>
 
     <h3>HTML5 doctype required</h3>
-    <p>Bootstrap makes use of certain HTML elements and CSS properties that require the use of the HTML5 doctype. Include it at the beginning of all your projects.</p>
+    <p>Strap.less makes use of certain HTML elements and CSS properties that require the use of the HTML5 doctype. Include it at the beginning of all your projects.</p>
 <div class="highlight"><pre><code class="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
   ...
@@ -571,7 +574,7 @@
 </code></pre></div>
 
     <h3>Mobile first</h3>
-    <p>With Bootstrap 2, we added optional mobile friendly styles for key aspects of the framework. With Bootstrap 3, we've rewritten the project to be mobile friendly from the start. Instead of adding on optional mobile styles, they're baked right into the core. In fact, <strong>Bootstrap is mobile first</strong>. Mobile first styles can be found throughout the entire library instead of in separate files.</p>
+    <p>With Strap.less 2, we added optional mobile friendly styles for key aspects of the framework. With Strap.less 3, we've rewritten the project to be mobile friendly from the start. Instead of adding on optional mobile styles, they're baked right into the core. In fact, <strong>Strap.less is mobile first</strong>. Mobile first styles can be found throughout the entire library instead of in separate files.</p>
     <p>To ensure proper rendering and touch zooming, <strong>add the viewport meta tag</strong> to your <code>&lt;head&gt;</code>.</p>
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="nt">&gt;</span>
 </code></pre></div>
@@ -580,7 +583,7 @@
     <p>We automatically attempt to scale images to appropriate sizes with a global <code>max-width: 100%;</code> on all <code>&lt;img&gt;</code> elements. If you run into problems (e.g., with Google Maps), be sure to disable this property on a per-case basis.</p>
 
     <h3>Typography and links</h3>
-    <p>Bootstrap sets basic global display, typography, and link styles. Specifically, we:</p>
+    <p>Strap.less sets basic global display, typography, and link styles. Specifically, we:</p>
     <ul>
       <li>Remove <code>margin</code> on the body</li>
       <li>Set <code>background-color: white;</code> on the <code>body</code></li>
@@ -601,7 +604,7 @@
     <div class="page-header">
       <h1>Grid system</h1>
     </div>
-    <p class="lead">Bootstrap includes a responsive, percent-based grid system that appropriately scales up to 12 columns as the device or viewport size increases—in other words, it's mobile first. It includes <a href="#grid-example">predefined classes</a> for this, as well as powerful <a href="#grid-less">mixins for generating semantic layouts</a>.</p>
+    <p class="lead">Strap.less includes a responsive, percent-based grid system that appropriately scales up to 12 columns as the device or viewport size increases—in other words, it's mobile first. It includes <a href="#grid-example">predefined classes</a> for this, as well as powerful <a href="#grid-less">mixins for generating semantic layouts</a>.</p>
 
     <h3 id="grid-example">Grid example</h3>
     <p>On mobile devices, the grid starts out stacked. Above 768px, it becomes horizontal as media queries kick in to apply <code>float</code>s and <code>width</code>s. To create a basic grid layout, wrap a series of <code>.col-span-*</code> elements within a <code>.row</code>. As this is a 12-column grid, each <code>.col-span-*</code> spans a number of those 12 columns, and should always add up to 12 for each row (or the number of columns in the parent), even at mobile resolutions.</p>
@@ -742,7 +745,7 @@
 </code></pre></div>
 
     <h3 id="grid-less">LESS mixins and variables</h3>
-    <p>In addition to <a href="#grid-example">prebuilt grid classes</a> for fast layouts, Bootstrap includes LESS variables and mixins for quickly generating your own simple, semantic layouts.</p>
+    <p>In addition to <a href="#grid-example">prebuilt grid classes</a> for fast layouts, Strap.less includes LESS variables and mixins for quickly generating your own simple, semantic layouts.</p>
 
     <h4>Variables</h4>
     <p>Variables determine the number of columns, the gutter width, and the media query point at which to begin floating columns. We use these to generate the predefined grid classes documented above, as well as for the custom mixins listed below.</p>
@@ -823,27 +826,27 @@
       <table class="table">
         <tbody>
           <tr>
-            <th><h1>Bootstrap heading</h1></th>
+            <th><h1>Strap.less heading</h1></th>
             <td>Semibold 38px</td>
           </tr>
           <tr>
-            <th><h2>Bootstrap heading</h2></th>
+            <th><h2>Strap.less heading</h2></th>
             <td>Semibold 32px</td>
           </tr>
           <tr>
-            <th><h3>Bootstrap heading</h3></th>
+            <th><h3>Strap.less heading</h3></th>
             <td>Semibold 24px</td>
           </tr>
           <tr>
-            <th><h4>Bootstrap heading</h4></th>
+            <th><h4>Strap.less heading</h4></th>
             <td>Semibold 18px</td>
           </tr>
           <tr>
-            <th><h5>Bootstrap heading</h5></th>
+            <th><h5>Strap.less heading</h5></th>
             <td>Semibold 16px</td>
           </tr>
           <tr>
-            <th><h6>Bootstrap heading</h6></th>
+            <th><h6>Strap.less heading</h6></th>
             <td>Semibold 12px</td>
           </tr>
         </tbody>
@@ -859,7 +862,7 @@
 
     <!-- Body copy -->
     <h2 id="type-body-copy">Body copy</h2>
-    <p>Bootstrap's global default <code>font-size</code> is <strong>14px</strong>, with a <code>line-height</code> of <strong>20px</strong>. This is applied to the <code>&lt;body&gt;</code> and all paragraphs. In addition, <code>&lt;p&gt;</code> (paragraphs) receive a bottom margin of half their line-height (10px by default).</p>
+    <p>Strap.less's global default <code>font-size</code> is <strong>14px</strong>, with a <code>line-height</code> of <strong>20px</strong>. This is applied to the <code>&lt;body&gt;</code> and all paragraphs. In addition, <code>&lt;p&gt;</code> (paragraphs) receive a bottom margin of half their line-height (10px by default).</p>
     <div class="bs-docs-example">
       <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
       <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
@@ -879,7 +882,7 @@
 
     <!-- Using LESS -->
     <h3>Built with Less</h3>
-    <p>The typographic scale is based on two LESS variables in <strong>variables.less</strong>: <code>@font-size-base</code> and <code>@line-height-base</code>. The first is the base font-size used throughout and the second is the base line-height. We use those variables and some simple math to create the margins, paddings, and line-heights of all our type and more. Customize them and Bootstrap adapts.</p>
+    <p>The typographic scale is based on two LESS variables in <strong>variables.less</strong>: <code>@font-size-base</code> and <code>@line-height-base</code>. The first is the base font-size used throughout and the second is the base line-height. We use those variables and some simple math to create the margins, paddings, and line-heights of all our type and more. Customize them and Strap.less adapts.</p>
 
 
     <!-- Emphasis -->
@@ -1315,7 +1318,7 @@
           <tr>
             <td>Mark</td>
             <td>Otto</td>
-            <td>@TwBootstrap</td>
+            <td>@TwStrap.less</td>
           </tr>
           <tr>
             <td>2</td>
@@ -1542,7 +1545,7 @@
 
 
     <h2>Optional layouts</h2>
-    <p>Included with Bootstrap are optional form layouts for common use cases.</p>
+    <p>Included with Strap.less are optional form layouts for common use cases.</p>
 
     <h3 id="forms-inline">Inline form</h3>
     <p>Add <code>.form-inline</code> for left-aligned labels and inline-block controls for a compact layout.</p>
@@ -1794,7 +1797,7 @@
 
     <div class="bs-docs-sidenote">
       <h4>Cross-browser compatibility</h4>
-      <p>While Bootstrap will apply these styles in all browsers, IE and Safari don't actually support the <code>&lt;disabled&gt;</code> attribute on a <code>&lt;fieldset&gt;</code>. Use custom JavaScript to disable the fieldset in these browsers.</p>
+      <p>While Strap.less will apply these styles in all browsers, IE and Safari don't actually support the <code>&lt;disabled&gt;</code> attribute on a <code>&lt;fieldset&gt;</code>. Use custom JavaScript to disable the fieldset in these browsers.</p>
     </div>
 
     <form class="bs-docs-example form-inline">
@@ -1836,7 +1839,7 @@
 </code></pre></div>
 
     <h3 id="forms-validation">Validation states</h3>
-    <p>Bootstrap includes validation styles for error, warning, info, and success messages. To use:</p>
+    <p>Strap.less includes validation styles for error, warning, info, and success messages. To use:</p>
     <ul>
       <li>Add <code>.has-warning</code>, <code>.has-error</code>, or <code>.has-success</code> to the parent element</li>
       <li>Add .input-with-feedback to the field(s) in question</li>
@@ -1886,7 +1889,7 @@
 
 
     <h2 id="forms-extending">Extending form controls</h2>
-    <p>Adding on top of existing browser controls, Bootstrap includes other useful form components.</p>
+    <p>Adding on top of existing browser controls, Strap.less includes other useful form components.</p>
 
     <h3 id="forms-input-groups">Input groups</h3>
     <p>Add text or buttons before, after, or on both sides of any text-based input. Use <code>.input-group</code> with a <code>.add-on</code> to prepend or append elements to an <code>&lt;input&gt;</code>.</p>
@@ -2127,7 +2130,7 @@
 </code></pre></div>
 
     <h4>Column sizing</h4>
-    <p>Use <code>.col col-lg-1</code> to <code>.col col-lg-12</code> for setting widths on inputs that match Bootstrap's grid system.</p>
+    <p>Use <code>.col col-lg-1</code> to <code>.col col-lg-12</code> for setting widths on inputs that match Strap.less's grid system.</p>
     <form class="bs-docs-example" style="padding-bottom: 15px;">
       <div class="controls docs-input-sizes">
         <input class="col col-lg-1" type="text" placeholder=".col col-lg-1">
@@ -2585,7 +2588,7 @@
     </div>
 
     <h2>Included glyphs</h2>
-    <p>Bootstrap comes with all 160 of <a href="http://glyphicons.com/" target="_blank">Glyphicons</a> Halflings set, all available in font formats for easy coloring, sizing, and placement.</p>
+    <p>Strap.less comes with all 160 of <a href="http://glyphicons.com/" target="_blank">Glyphicons</a> Halflings set, all available in font formats for easy coloring, sizing, and placement.</p>
 
     <ul class="the-icons clearfix">
       <li><i class="glyphicon glyphicon-glass"></i> glyphicon-glass</li>
@@ -2757,7 +2760,7 @@
     </ul>
 
     <h3>Glyphicons attribution</h3>
-    <p><a href="http://glyphicons.com/">Glyphicons</a> Halflings are normally not available for free, but an arrangement between Bootstrap and the Glyphicons creator have made this possible at no cost to you as developers. As a thank you, we ask you to include an optional link back to <a href="http://glyphicons.com/">Glyphicons</a> whenever practical.</p>
+    <p><a href="http://glyphicons.com/">Glyphicons</a> Halflings are normally not available for free, but an arrangement between Strap.less and the Glyphicons creator have made this possible at no cost to you as developers. As a thank you, we ask you to include an optional link back to <a href="http://glyphicons.com/">Glyphicons</a> whenever practical.</p>
 
 
     <h2>How to use</h2>
@@ -3150,7 +3153,7 @@
 
     <div class="bs-docs-sidenote">
       <h4>Plugin dependency</h4>
-      <p>Button dropdowns require the <a href="#dropdown-plugin">dropdown plugin</a> to be included in your version of Bootstrap.</p>
+      <p>Button dropdowns require the <a href="#dropdown-plugin">dropdown plugin</a> to be included in your version of Strap.less.</p>
     </div>
 
     <h3 id="btn-dropdowns-single">Single button dropdowns</h3>
@@ -3424,7 +3427,7 @@
       <h1>Navs</h1>
     </div>
 
-    <p class="lead">Navs available in Bootstrap have shared markup, starting with the base <code>.nav</code> class, as well as shared states. Swap modifier classes to switch between each style.</p>
+    <p class="lead">Navs available in Strap.less have shared markup, starting with the base <code>.nav</code> class, as well as shared states. Swap modifier classes to switch between each style.</p>
 
     <h2 id="nav-tabs">Tabs</h2>
     <p>Note the <code>.nav-tabs</code> class requires the <code>.nav</code> base class.</p>
@@ -3781,7 +3784,7 @@
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-      <p>Make sure to include this <strong>after</strong> the core Bootstrap CSS.</p>
+      <p>Make sure to include this <strong>after</strong> the core Strap.less CSS.</p>
     </div>
 
     <h3 id="navbar-fixed-bottom">Fixed to bottom</h3>
@@ -3815,7 +3818,7 @@
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-      <p>Make sure to include this <strong>after</strong> the core Bootstrap CSS.</p>
+      <p>Make sure to include this <strong>after</strong> the core Strap.less CSS.</p>
     </div>
 
     <h3 id="navbar-static-top">Static top navbar</h3>
@@ -3910,7 +3913,7 @@
 
     <div class="bs-docs-sidenote">
       <h4>Plugin dependency</h4>
-      <p>The responsive navbar requires the <a href="#collapse">collapse plugin</a> to be included in your version of Bootstrap.</p>
+      <p>The responsive navbar requires the <a href="#collapse">collapse plugin</a> to be included in your version of Strap.less.</p>
     </div>
 
 
@@ -4214,7 +4217,7 @@
     <div class="page-header">
       <h1>Badges</h1>
     </div>
-    <p class="lead">Easily highlight new or unread items by adding a <code>&lt;span class="badge"&gt;</code> to links, Bootstrap navs, and more.</p>
+    <p class="lead">Easily highlight new or unread items by adding a <code>&lt;span class="badge"&gt;</code> to links, Strap.less navs, and more.</p>
 
     <div class="bs-docs-example">
       <a hre="#">Inbox <span class="badge">42</span></a>
@@ -4313,10 +4316,10 @@
     <div class="page-header">
       <h1>Thumbnails</h1>
     </div>
-    <p class="lead">Extend Bootstrap's <a href="http://v3.bootcss.com/docs/docs/#grid">grid system</a> with the thumbnail component to easily display grids of images, videos, text, and more.</p>
+    <p class="lead">Extend Strap.less's <a href="http://v3.bootcss.com/docs/docs/#grid">grid system</a> with the thumbnail component to easily display grids of images, videos, text, and more.</p>
 
     <h3>Default thumbnails</h3>
-    <p>By default, Bootstrap's thumbnails are designed to showcase linked images with minimal required markup.</p>
+    <p>By default, Strap.less's thumbnails are designed to showcase linked images with minimal required markup.</p>
     <div class="bs-docs-example">
       <div class="row">
         <div class="col col-lg-3">
@@ -5034,7 +5037,7 @@
 
   <div class="bs-docs-section-header" id="js">
     <h1>JavaScript plugins</h1>
-    <p class="lead">Bring Bootstrap's components to life with over a dozen custom jQuery plugins. Easily include them all, or one by one.</p>
+    <p class="lead">Bring Strap.less's components to life with over a dozen custom jQuery plugins. Easily include them all, or one by one.</p>
   </div>
 
 
@@ -5046,14 +5049,14 @@
     </div>
 
     <h3 id="js-individual-compiled">Individual or compiled</h3>
-    <p>Plugins can be included individually, or all at once. <strong>Do not attempt to include both.</strong> Both <strong>bootstrap.js</strong> and <strong>bootstrap.min.js</strong> contain all plugins in a single file.</p>
+    <p>Plugins can be included individually, or all at once. <strong>Do not attempt to include both.</strong> Both <strong>Strap.less.js</strong> and <strong>Strap.less.min.js</strong> contain all plugins in a single file.</p>
     <div class="bs-docs-sidenote">
       <h4>Plugin dependencies</h4>
       <p>Some plugins and CSS components depend on other plugins. If you include plugins individually, make sure to check for these dependencies in the docs (in notes like this one).</p>
     </div>
 
     <h3 id="js-data-attrs">Data attributes</h3>
-    <p>You can use all Bootstrap plugins purely through the markup API without writing a single line of JavaScript. This is Bootstrap's first class API and should be your first consideration when using a plugin.</p>
+    <p>You can use all Strap.less plugins purely through the markup API without writing a single line of JavaScript. This is Strap.less's first class API and should be your first consideration when using a plugin.</p>
 
     <p>That said, in some situations it may be desirable to turn this functionality off. Therefore, we also provide the ability to disable the data attribute API by unbinding all events on the body namespaced with `'data-api'`. This looks like this:
 </p><div class="highlight"><pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="s1">'body'</span><span class="p">).</span><span class="nx">off</span><span class="p">(</span><span class="s1">'.data-api'</span><span class="p">)</span>
@@ -5064,7 +5067,7 @@
 </code></pre></div>
 
     <h3 id="js-programmatic-api">Programmatic API</h3>
-    <p>We also believe you should be able to use all Bootstrap plugins purely through the JavaScript API. All public APIs are single, chainable methods, and return the collection acted upon.</p>
+    <p>We also believe you should be able to use all Strap.less plugins purely through the JavaScript API. All public APIs are single, chainable methods, and return the collection acted upon.</p>
 <div class="highlight"><pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="s2">".btn.danger"</span><span class="p">).</span><span class="nx">button</span><span class="p">(</span><span class="s2">"toggle"</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">"fat"</span><span class="p">)</span>
 </code></pre></div>
 
@@ -5077,13 +5080,13 @@
     <p>Each plugin also exposes its raw constructor on a `Constructor` property: <code>$.fn.popover.Constructor</code>. If you'd like to get a particular plugin instance, retrieve it directly from an element: <code>$('[rel=popover]').data('popover')</code>.</p>
 
     <h3 id="js-noconflict">No conflict</h3>
-    <p>Sometimes it is necessary to use Bootstrap plugins with other UI frameworks. In these circumstances, namespace collisions can occasionally occur. If this happens, you may call <code>.noConflict</code> on the plugin you wish to revert the value of.</p>
-<div class="highlight"><pre><code class="js"><span class="kd">var</span> <span class="nx">bootstrapButton</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">button</span><span class="p">.</span><span class="nx">noConflict</span><span class="p">()</span> <span class="c1">// return $.fn.button to previously assigned value</span>
-<span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">bootstrapBtn</span> <span class="o">=</span> <span class="nx">bootstrapButton</span>            <span class="c1">// give $().bootstrapBtn the bootstrap functionality</span>
+    <p>Sometimes it is necessary to use Strap.less plugins with other UI frameworks. In these circumstances, namespace collisions can occasionally occur. If this happens, you may call <code>.noConflict</code> on the plugin you wish to revert the value of.</p>
+<div class="highlight"><pre><code class="js"><span class="kd">var</span> <span class="nx">Strap.lessButton</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">button</span><span class="p">.</span><span class="nx">noConflict</span><span class="p">()</span> <span class="c1">// return $.fn.button to previously assigned value</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">Strap.lessBtn</span> <span class="o">=</span> <span class="nx">Strap.lessButton</span>            <span class="c1">// give $().Strap.lessBtn the Strap.less functionality</span>
 </code></pre></div>
 
     <h3 id="js-events">Events</h3>
-    <p>Bootstrap provides custom events for most plugin's unique actions. Generally, these come in an infinitive and past participle form - where the infinitive (ex. <code>show</code>) is triggered at the start of an event, and its past participle form (ex. <code>shown</code>) is trigger on the completion of an action.</p>
+    <p>Strap.less provides custom events for most plugin's unique actions. Generally, these come in an infinitive and past participle form - where the infinitive (ex. <code>show</code>) is triggered at the start of an event, and its past participle form (ex. <code>shown</code>) is trigger on the completion of an action.</p>
     <p>All infinitive events provide <code>preventDefault</code> functionality. This provides the ability to stop the execution of an action before it starts.</p>
 <div class="highlight"><pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="s1">'#myModal'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'show'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">data</span><span class="p">)</span> <span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">()</span> <span class="c1">// stops modal from being shown</span>
@@ -5097,10 +5100,10 @@
   ================================================== -->
   <div class="bs-docs-section" id="transitions">
     <div class="page-header">
-      <h1>Transitions <small>bootstrap-transition.js</small></h1>
+      <h1>Transitions <small>Strap.less-transition.js</small></h1>
     </div>
     <h3>About transitions</h3>
-    <p>For simple transition effects, include bootstrap-transition.js once alongside the other JS files. If you're using the compiled (or minified) bootstrap.js, there is no need to include this—it's already there.</p>
+    <p>For simple transition effects, include Strap.less-transition.js once alongside the other JS files. If you're using the compiled (or minified) Strap.less.js, there is no need to include this—it's already there.</p>
     <h3>Use cases</h3>
     <p>A few examples of the transition plugin:</p>
     <ul>
@@ -5119,7 +5122,7 @@
   ================================================== -->
   <div class="bs-docs-section" id="modals">
     <div class="page-header">
-      <h1>Modals <small>bootstrap-modal.js</small></h1>
+      <h1>Modals <small>Strap.less-modal.js</small></h1>
     </div>
 
     <h2 id="modals-examples">Examples</h2>
@@ -5314,7 +5317,7 @@
 </code></pre></div>
 
     <h3>Events</h3>
-    <p>Bootstrap's modal class exposes a few events for hooking into modal functionality.</p>
+    <p>Strap.less's modal class exposes a few events for hooking into modal functionality.</p>
     <table class="table table-bordered table-striped">
       <thead>
        <tr>
@@ -5353,7 +5356,7 @@
         ================================================== -->
         <section id="dropdowns">
           <div class="page-header">
-            <h1>Dropdowns <small>bootstrap-dropdown.js</small></h1>
+            <h1>Dropdowns <small>Strap.less-dropdown.js</small></h1>
           </div>
 
 
@@ -5487,7 +5490,7 @@
         ================================================== -->
         <section id="scrollspy">
           <div class="page-header">
-            <h1>ScrollSpy <small>bootstrap-scrollspy.js</small></h1>
+            <h1>ScrollSpy <small>Strap.less-scrollspy.js</small></h1>
           </div>
 
 
@@ -5534,7 +5537,7 @@
           <h2>Usage</h2>
 
           <h3>Via data attributes</h3>
-          <p>To easily add scrollspy behavior to your topbar navigation, add <code>data-spy="scroll"</code> to the element you want to spy on (most typically this would be the <code>&lt;body&gt;</code>. Then add the <code>data-target</code> attribute with the ID or class of the parent element of any Bootstrap <code>.nav</code> component.</p>
+          <p>To easily add scrollspy behavior to your topbar navigation, add <code>data-spy="scroll"</code> to the element you want to spy on (most typically this would be the <code>&lt;body&gt;</code>. Then add the <code>data-target</code> attribute with the ID or class of the parent element of any Strap.less <code>.nav</code> component.</p>
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;body</span> <span class="na">data-spy=</span><span class="s">"scroll"</span> <span class="na">data-target=</span><span class="s">"#navbar-example"</span><span class="nt">&gt;</span>
   ...
 <span class="nt">&lt;/body&gt;</span>
@@ -5603,7 +5606,7 @@
         ================================================== -->
         <section id="tabs">
           <div class="page-header">
-            <h1>Togglable tabs <small>bootstrap-tab.js</small></h1>
+            <h1>Togglable tabs <small>Strap.less-tab.js</small></h1>
           </div>
 
 
@@ -5657,7 +5660,7 @@
 </code></pre></div>
 
           <h3>Markup</h3>
-          <p>You can activate a tab or pill navigation without writing any JavaScript by simply specifying <code>data-toggle="tab"</code> or <code>data-toggle="pill"</code> on an element. Adding the <code>nav</code> and <code>nav-tabs</code> classes to the tab <code>ul</code> will apply the Bootstrap tab styling.</p>
+          <p>You can activate a tab or pill navigation without writing any JavaScript by simply specifying <code>data-toggle="tab"</code> or <code>data-toggle="pill"</code> on an element. Adding the <code>nav</code> and <code>nav-tabs</code> classes to the tab <code>ul</code> will apply the Strap.less tab styling.</p>
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav nav-tabs"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#home"</span> <span class="na">data-toggle=</span><span class="s">"tab"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
   <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#profile"</span> <span class="na">data-toggle=</span><span class="s">"tab"</span><span class="nt">&gt;</span>Profile<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
@@ -5725,7 +5728,7 @@
         ================================================== -->
         <section id="tooltips">
           <div class="page-header">
-            <h1>Tooltips <small>bootstrap-tooltip.js</small></h1>
+            <h1>Tooltips <small>Strap.less-tooltip.js</small></h1>
           </div>
 
 
@@ -5749,7 +5752,7 @@
 
 
           <h3>Tooltips in input groups</h3>
-          <p>When using tooltips and popovers with the Bootstrap input groups, you'll have to set the <code>container</code> (documented below) option to avoid unwanted side effects.</p>
+          <p>When using tooltips and popovers with the Strap.less input groups, you'll have to set the <code>container</code> (documented below) option to avoid unwanted side effects.</p>
 
           <hr class="bs-docs-separator">
 
@@ -5868,7 +5871,7 @@
       ================================================== -->
       <section id="popovers">
         <div class="page-header">
-          <h1>Popovers <small>bootstrap-popover.js</small></h1>
+          <h1>Popovers <small>Strap.less-popover.js</small></h1>
         </div>
 
         <h2>Examples</h2>
@@ -5876,7 +5879,7 @@
 
         <div class="bs-docs-sidenote">
           <h4>Plugin dependency</h4>
-          <p>Popovers require the <a href="#tooltips">tooltip plugin</a> to be included in your version of Bootstrap.</p>
+          <p>Popovers require the <a href="#tooltips">tooltip plugin</a> to be included in your version of Strap.less.</p>
         </div>
 
         <h3>Static popover</h3>
@@ -5976,7 +5979,7 @@
               <td>selector</td>
               <td>string</td>
               <td>false</td>
-              <td>if a selector is provided, tooltip objects will be delegated to the specified targets if a selector is provided, tooltip objects will be delegated to the specified targets. in practice, this is used to enable dynamic HTML content to have popovers added. See <a href="https://github.com/twitter/bootstrap/issues/4215">this</a> and <a href="http://jsfiddle.net/KPeKS/4/">an informative example</a>.</td>
+              <td>if a selector is provided, tooltip objects will be delegated to the specified targets if a selector is provided, tooltip objects will be delegated to the specified targets. in practice, this is used to enable dynamic HTML content to have popovers added. See <a href="https://github.com/twitter/Strap.less/issues/4215">this</a> and <a href="http://jsfiddle.net/KPeKS/4/">an informative example</a>.</td>
             </tr>
             <tr>
               <td>trigger</td>
@@ -6055,7 +6058,7 @@
       ================================================== -->
       <div class="bs-docs-section" id="js-alerts">
         <div class="page-header">
-          <h1>Alert messages <small>bootstrap-alert.js</small></h1>
+          <h1>Alert messages <small>Strap.less-alert.js</small></h1>
         </div>
 
 
@@ -6105,7 +6108,7 @@
 
 
         <h3>Events</h3>
-        <p>Bootstrap's alert class exposes a few events for hooking into alert functionality.</p>
+        <p>Strap.less's alert class exposes a few events for hooking into alert functionality.</p>
         <table class="table table-bordered table-striped">
           <thead>
             <tr>
@@ -6136,7 +6139,7 @@
           ================================================== -->
           <div class="bs-docs-section" id="js-buttons">
             <div class="page-header">
-              <h1>Buttons <small>bootstrap-button.js</small></h1>
+              <h1>Buttons <small>Strap.less-button.js</small></h1>
             </div>
 
             <h2>Example uses</h2>
@@ -6252,7 +6255,7 @@
 
             <div class="bs-docs-sidenote">
               <h4>Cross-browser compatibility</h4>
-              <p><a href="https://github.com/twitter/bootstrap/issues/793">Firefox persists the disabled state across page loads</a>. A workaround for this is to use <code>autocomplete="off"</code>.</p>
+              <p><a href="https://github.com/twitter/Strap.less/issues/793">Firefox persists the disabled state across page loads</a>. A workaround for this is to use <code>autocomplete="off"</code>.</p>
             </div>
 
             <h4>$().button('reset')</h4>
@@ -6273,7 +6276,7 @@
           ================================================== -->
           <section id="collapse">
             <div class="page-header">
-              <h1>Collapse <small>bootstrap-collapse.js</small></h1>
+              <h1>Collapse <small>Strap.less-collapse.js</small></h1>
             </div>
 
             <h3>About</h3>
@@ -6281,7 +6284,7 @@
 
             <div class="bs-docs-sidenote">
               <h4>Plugin dependency</h4>
-              <p>Collapse requires the <a href="#transitions">transitions plugin</a> to be included in your version of Bootstrap.</p>
+              <p>Collapse requires the <a href="#transitions">transitions plugin</a> to be included in your version of Strap.less.</p>
             </div>
 
             <h2>Example accordion</h2>
@@ -6437,7 +6440,7 @@
             <p>Hides a collapsible element.</p>
 
             <h3>Events</h3>
-            <p>Bootstrap's collapse class exposes a few events for hooking into collapse functionality.</p>
+            <p>Strap.less's collapse class exposes a few events for hooking into collapse functionality.</p>
             <table class="table table-bordered table-striped">
               <thead>
                <tr>
@@ -6478,7 +6481,7 @@
           ================================================== -->
           <section id="carousel">
             <div class="page-header">
-              <h1>Carousel <small>bootstrap-carousel.js</small></h1>
+              <h1>Carousel <small>Strap.less-carousel.js</small></h1>
             </div>
 
             <h2>Examples</h2>
@@ -6656,7 +6659,7 @@
             <p>Cycles to the next item.</p>
 
             <h3>Events</h3>
-            <p>Bootstrap's carousel class exposes two events for hooking into carousel functionality.</p>
+            <p>Strap.less's carousel class exposes two events for hooking into carousel functionality.</p>
             <table class="table table-bordered table-striped">
               <thead>
                <tr>
@@ -6683,7 +6686,7 @@
           ================================================== -->
           <section id="typeahead">
             <div class="page-header">
-              <h1>Typeahead <small>bootstrap-typeahead.js</small></h1>
+              <h1>Typeahead <small>Strap.less-typeahead.js</small></h1>
             </div>
 
 
@@ -6695,7 +6698,7 @@
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">data-provide=</span><span class="s">"typeahead"</span><span class="nt">&gt;</span>
 </code></pre></div>
 
-            <p>You'll want to set <code>autocomplete="off"</code> to prevent default browser menus from appearing over the Bootstrap typeahead dropdown.</p>
+            <p>You'll want to set <code>autocomplete="off"</code> to prevent default browser menus from appearing over the Strap.less typeahead dropdown.</p>
 
             <hr class="bs-docs-separator">
 
@@ -6778,7 +6781,7 @@
           ================================================== -->
           <section id="affix">
             <div class="page-header">
-              <h1>Affix <small>bootstrap-affix.js</small></h1>
+              <h1>Affix <small>Strap.less-affix.js</small></h1>
             </div>
 
             <h2>Example</h2>
@@ -6857,10 +6860,10 @@
           <iframe class="github-btn" src="./new_files/github-btn.html" allowtransparency="true" frameborder="0" scrolling="0" width="102px" height="20px"></iframe>
         </li>
         <li class="follow-btn">
-          <a href="https://twitter.com/twbootstrap" class="twitter-follow-button" data-link-color="#0069D6" data-show-count="true">Follow @twbootstrap</a>
+          <a href="https://twitter.com/twStrap.less" class="twitter-follow-button" data-link-color="#0069D6" data-show-count="true">Follow @twStrap.less</a>
         </li>
         <li class="tweet-btn">
-          <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://twitter.github.com/bootstrap/" data-count="horizontal" data-via="twbootstrap" data-related="mdo:Creator of Twitter Bootstrap">Tweet</a>
+          <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://twitter.github.com/Strap.less/" data-count="horizontal" data-via="twStrap.less" data-related="mdo:Creator of Twitter Strap.less">Tweet</a>
         </li>
       </ul>
     </div>
@@ -6870,34 +6873,34 @@
     <p>Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
     <p><a href="http://glyphicons.com/">Glyphicons Free</a> licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
     <ul class="footer-links">
-      <li><a href="http://blog.getbootstrap.com/">Blog</a></li>
+      <li><a href="http://blog.getStrap.less.com/">Blog</a></li>
       <li class="muted">·</li>
-      <li><a href="https://github.com/twitter/bootstrap/issues?state=open">Issues</a></li>
+      <li><a href="https://github.com/twitter/Strap.less/issues?state=open">Issues</a></li>
       <li class="muted">·</li>
-      <li><a href="https://github.com/twitter/bootstrap/blob/master/CHANGELOG.md">Changelog</a></li>
+      <li><a href="https://github.com/twitter/Strap.less/blob/master/CHANGELOG.md">Changelog</a></li>
     </ul>
   </div>
 </footer>
 
 
     <!-- JS and analytics only. -->
-    <!-- Bootstrap core JavaScript
+    <!-- Strap.less core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="./new_files/jquery.js"></script>
-<script src="./new_files/bootstrap-transition.js"></script>
-<script src="./new_files/bootstrap-alert.js"></script>
-<script src="./new_files/bootstrap-modal.js"></script>
-<script src="./new_files/bootstrap-dropdown.js"></script>
-<script src="./new_files/bootstrap-scrollspy.js"></script>
-<script src="./new_files/bootstrap-tab.js"></script>
-<script src="./new_files/bootstrap-tooltip.js"></script>
-<script src="./new_files/bootstrap-popover.js"></script>
-<script src="./new_files/bootstrap-button.js"></script>
-<script src="./new_files/bootstrap-collapse.js"></script>
-<script src="./new_files/bootstrap-carousel.js"></script>
-<script src="./new_files/bootstrap-typeahead.js"></script>
-<script src="./new_files/bootstrap-affix.js"></script>
+<script src="./new_files/Strap.less-transition.js"></script>
+<script src="./new_files/Strap.less-alert.js"></script>
+<script src="./new_files/Strap.less-modal.js"></script>
+<script src="./new_files/Strap.less-dropdown.js"></script>
+<script src="./new_files/Strap.less-scrollspy.js"></script>
+<script src="./new_files/Strap.less-tab.js"></script>
+<script src="./new_files/Strap.less-tooltip.js"></script>
+<script src="./new_files/Strap.less-popover.js"></script>
+<script src="./new_files/Strap.less-button.js"></script>
+<script src="./new_files/Strap.less-collapse.js"></script>
+<script src="./new_files/Strap.less-carousel.js"></script>
+<script src="./new_files/Strap.less-typeahead.js"></script>
+<script src="./new_files/Strap.less-affix.js"></script>
 
 <!-- <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script> -->
 <script src="./new_files/holder.js"></script>

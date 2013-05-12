@@ -1,10 +1,8 @@
-function doThing {
-    lessc static/less/variables.less > variables.css
+function makeStrapless {
+    lessc --line-numbers="mediaquery" less/strap.less > css/strapless.css
 }
 
-
 intervalSeconds=5
-
 
 if [ -z "$1" ]
 then
@@ -12,7 +10,6 @@ then
 else
     dir="$1"
 fi
-
 
 while true
 do
@@ -22,6 +19,6 @@ do
 
     if [ $checkSum1 -ne $checkSum2 ]
     then
-        doThing
+        makeStrapless
     fi
 done

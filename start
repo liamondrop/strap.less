@@ -1,3 +1,4 @@
 #!/bin/bash
 
 node server/server.js 6969
+source listen less

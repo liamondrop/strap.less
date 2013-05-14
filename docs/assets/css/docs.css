@@ -171,7 +171,7 @@ section > ul li {
   font-weight: 500;
   color: #b94a48;
   background-color: transparent;
-  border-right: 1px solid #b94a48;
+  border-right: 3px solid #b94a48;
 }
 
 /* Nav: second level (shown on .active) */
@@ -656,8 +656,8 @@ input.focused {
   }
 
   .bs-docs-section-header h1 {
-    font-size: 80px;
-    font-size: 8rem;
+    font-size: 60px;
+    font-size: 6rem;
     line-height: 1;
   }
 

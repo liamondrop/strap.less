@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <title>The Docs &middot; strap.less</title>
 
-    <link href="../css/strapless.css" rel="stylesheet">
+    <link href="../less/strap.less" rel="stylesheet/less">
     <script type="text/javascript">
       less = {
         env: "development", // or "production"
@@ -16,7 +16,7 @@
         dumpLineNumbers: "all"
       };
     </script>
-    <!-- <script src="./assets/js/less.min.js"></script> -->
+    <script src="./assets/js/less.min.js"></script>
 
     <!-- Documentation extras -->
     <link href="./assets/css/docs.css" rel="stylesheet">
@@ -37,76 +37,42 @@
     <!-- Page content of course! -->
     <div class="bs-docs-container">
 
-      <!-- Welcome
-  ================================================== -->
   <div id="welcome" class="bs-docs-section-header">
-    <h1>Welcome</h1>
-    <p class="lead">Welcome to the Strap.less documentation, the living, interactive style and code guide for all things Strap.less. If you're new here, continue reading to learn how to get started. Otherwise, carry on you beautiful person you.</p>
+    <h1>Hi!</h1>
+    <p class="lead">strap.less in the nearly-naked style framework, designed from the ground up to be lightweight and easy to extend so you can kick off your project with ease.</p>
   </div>
 
-  <!-- Getting started
-  ================================================== -->
-  <div class="bs-docs-section" id="getting-started">
-    <div class="page-header">
-      <h1>Getting started</h1>
-    </div>
-    <p class="lead">There are a few easy ways to quickly get started with Strap.less, each one appealing to a different skill level and use case. Read through to see what suits your particular needs.</p>
-
-    <h3>Download compiled CSS and JS</h3>
-    <p class="lead">The fastest way to get started is to get the compiled and minified versions of our CSS, JavaScript, and fonts. No documentation or original source files are included.</p>
-    <p><a class="btn btn-large btn-primary" href="http://v3.bootcss.com/docs/assets/Strap.less.zip" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;Getting started&#39;, &#39;Download&#39;, &#39;Download compiled&#39;]);">Download Strap.less</a></p>
-
-    <hr>
-
-    <h3 id="download-options">More download options</h3>
-    <div class="bs-docs-dl-options">
-      <h4>
-        <a href="https://github.com/twitter/Strap.less/zipball/master" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;Getting started&#39;, &#39;Download&#39;, &#39;Download source&#39;]);">Download latest source code</a>
-      </h4>
-      <p>Get the original files for all CSS and JavaScript by downloading the latest version directly from GitHub.</p>
-      <h4>
-        <a href="https://github.com/twitter/Strap.less/" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;Getting started&#39;, &#39;Download&#39;, &#39;GitHub project&#39;]);">Clone or fork via GitHub</a>
-      </h4>
-      <p>Clone the entire project or fork your own version of Strap.less to make it your own by visiting us on GitHub.</p>
-      <h4>
-        Install with <a href="http://twitter.github.com/bower">Bower</a>
-      </h4>
-      <p>Install and manage the original files for all CSS and JavaScript, along with a local copy of the docs, using <a href="http://twitter.github.com/bower">Bower</a>.</p>
-      <pre><code class="bash"><span class="nv">$ </span>bower install Strap.less</code></pre>
-    </div>
-
-    <hr>
-
-    <h3 id="Strap.less-cdn">Use the Strap.less CDN</h3>
-    <p>The folks over at <a href="https://www.netdna.com/">NetDNA</a> have graciously provided CDN support for Strap.less's CSS and JavaScript. To use, swap your local instances for the <a href="http://www.Strap.lesscdn.com/">Strap.less CDN</a> links listed below.</p>
-<pre><code class="html"><span class="c">&lt;!-- Latest compiled and minified CSS --&gt;</span>
-<span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"//netdna.Strap.lesscdn.com/Strap.less/3.0.0/css/Strap.less.min.css"</span><span class="nt">&gt;</span>
-
-<span class="c">&lt;!-- Latest compiled and minified JavaScript --&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//netdna.Strap.lesscdn.com/Strap.less/3.0.0/js/Strap.less.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-</code></pre>
+  <div id="docs" class="bs-docs-section">
+    <h1>Docs</h1>
+    <p>In addition to documenting the functionality and usage of the strap.less framework, this page is also designed to be an ideal test environment.</p>
   </div>
 
-  <!-- File structure
-  ================================================== -->
-  <div class="bs-docs-section" id="whats-included">
-    <div class="page-header">
-      <h1>What's included</h1>
-    </div>
-    <p class="lead">You'll see something like this:</p>
 
-<pre><code class="bash">  less/
-  ├── bones/
-  │   ├── [ <span class="k">core universal style modules</span> ]
-  │   ├── ...
-  ├── skin/
-  │   ├── [ <span class="k">core style modules @imported and extended</span> ]
-  │   ├── ...
-  ├── custom/
-  │   ├── [ <span class="k">non-universal, page-specific styles</span> ] <span class="c">// @import variables.less &amp; mixins.less for any shared styles</span>
-  │   ├── ...
-  └── strap.less <span class="c">// all modules used in the project @imported here</span>
-</code></pre>
+  <div class="bs-docs-section" id="setup">
+    <div class="page-header">
+      <h1>Setup</h1>
+    </div>
+    <p class="lead">Your project should look something like this:</p>
+
+    <pre><code class="bash">  less/
+      ├── bones/ <span class="c">// leave these alone</span>
+      │   ├── <span class="k">_config.less</span>
+      │   ├── <span class="k">_mixins.less</span>
+      │   └── <span class="k">...</span>
+      ├── skin/ <span class="c">// customize these after @import ...</span>
+      │   ├── <span class="k">_config.less</span>
+      │   ├── <span class="k">_mixins.less</span>
+      │   └── <span class="k">...</span>
+      ├── page-specific/
+      │   │   <span class="c">// page-specific, non-universal styles should be separate from the main project</span>
+      │   │   <span class="c">// @import _config.less &amp; _mixins.less</span>
+      │   │   <span class="c">// wherever shared variables or mixins are needed</span>
+      │   ├── <span class="k">page-specific-styles.less</span>
+      │   ├── <span class="k">page-specific-responsive.less</span>
+      │   └── <span class="k">...</span>
+      └── <span class="k">strap.less</span> <span class="c">// all universal modules @imported here from skin/</span>
+      └── <span class="k">page-specific.less</span> <span class="c">// modules from page-specific dir @imported here</span>
+    </code></pre>
 
     <p>This is the most basic form of strap.less: compiled files for quick drop-in usage in nearly any web project. We provide compiled CSS and JS (<code>strap.less.*</code>), as well as compiled and minified CSS and JS (<code>strap.less.min.*</code>). The image files are compressed using <a href="http://imageoptim.com/">ImageOptim</a>, a Mac app for compressing PNGs.</p>
     <div class="bs-docs-sidenote">
@@ -6486,7 +6452,7 @@
 
         <li class=""><a href="#welcome">Welcome!</a></li>
         <li class=""><a href="#getting-started">Getting started</a></li>
-        <li class=""><a href="#whats-included">What's included</a></li>
+        <li class=""><a href="#setup">Setup</a></li>
         <li class=""><a href="#examples">Templates and examples</a></li>
         <li class=""><a href="#customizing">Customizing strap.less</a></li>
 

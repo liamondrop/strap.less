@@ -54,24 +54,25 @@
     </div>
     <p class="lead">Your project should look something like this:</p>
 
-    <pre><code class="bash">  less/
-      ├── bones/ <span class="c">// leave these alone</span>
-      │   ├── <span class="k">_config.less</span>
-      │   ├── <span class="k">_mixins.less</span>
-      │   └── <span class="k">...</span>
-      ├── skin/ <span class="c">// customize these after @import ...</span>
-      │   ├── <span class="k">_config.less</span>
-      │   ├── <span class="k">_mixins.less</span>
-      │   └── <span class="k">...</span>
-      ├── page-specific/
-      │   │   <span class="c">// page-specific, non-universal styles should be separate from the main project</span>
-      │   │   <span class="c">// @import _config.less &amp; _mixins.less</span>
-      │   │   <span class="c">// wherever shared variables or mixins are needed</span>
-      │   ├── <span class="k">page-specific-styles.less</span>
-      │   ├── <span class="k">page-specific-responsive.less</span>
-      │   └── <span class="k">...</span>
-      └── <span class="k">strap.less</span> <span class="c">// all universal modules @imported here from skin/</span>
-      └── <span class="k">page-specific.less</span> <span class="c">// modules from page-specific dir @imported here</span>
+    <pre><code class="bash">
+    less/
+    ├─┬ bones/ <span class="c"># leave these alone</span>
+    │ ├── <span class="k">_config.less</span>
+    │ ├── <span class="k">_mixins.less</span>
+    │ └── <span class="k">...</span>
+    ├─┬ skin/ <span class="c"># customize these after @import ...</span>
+    │ ├── <span class="k">_config.less</span>
+    │ ├── <span class="k">_mixins.less</span>
+    │ └── <span class="k">...</span>
+    ├─┬ page-specific/
+    │ │   <span class="c"># page-specific, non-universal styles should be separate from the main project</span>
+    │ │   <span class="c"># @import _config.less &amp; _mixins.less</span>
+    │ │   <span class="c"># wherever shared variables or mixins are needed</span>
+    │ ├── <span class="k">page-specific-styles.less</span>
+    │ ├── <span class="k">page-specific-responsive.less</span>
+    │ └── <span class="k">...</span>
+    ├── <span class="k">strap.less</span> <span class="c"># all universal modules @imported here from skin/</span>
+    └── <span class="k">page-specific.less</span> <span class="c"># modules from page-specific dir @imported here</span>
     </code></pre>
 
     <p>This is the most basic form of strap.less: compiled files for quick drop-in usage in nearly any web project. We provide compiled CSS and JS (<code>strap.less.*</code>), as well as compiled and minified CSS and JS (<code>strap.less.min.*</code>). The image files are compressed using <a href="http://imageoptim.com/">ImageOptim</a>, a Mac app for compressing PNGs.</p>

@@ -3,7 +3,7 @@ strap.less - 0.0.1 WIP
 
 Nearly naked LESS framework
 
-#File structure
+###File structure
 ```bash
     less/
     ├─┬ bones/ # leave these alone</span>

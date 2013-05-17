@@ -1,0 +1,7 @@
+{
+  "name": "strap.less",
+  "dependencies": {
+    "connect": "2.7.9",
+    "less-middleware": "*"
+  }
+}

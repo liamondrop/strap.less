@@ -5,7 +5,16 @@
 
 <title>The Docs &middot; strap.less</title>
 
-<link href="/style/css/strap.css" rel="stylesheet">
+<link href="/style/less/strap.less" rel="stylesheet/less">
+<script type="text/javascript">
+  less = {
+    env: "development", // or "production"
+    poll: 2000,         // when in watch mode, time in ms between polls
+    dumpLineNumbers: "mediaquery"
+  };
+</script>
+<script src="/js/less.min.js"></script>
+
 <link href="/style/css/strapless-docs.css" rel="stylesheet">
 <link href="/style/css/pygments-manni.css" rel="stylesheet">
 

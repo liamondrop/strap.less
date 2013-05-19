@@ -9,51 +9,9 @@
     <!-- Page content of course! -->
     <div class="strapless-container">
 
-  <div id="welcome" class="strapless-section-header">
-    <h1>Hi!</h1>
-    <p class="lead">strap.less in the nearly-naked style framework, designed from the ground up to be lightweight and easy to extend so you can kick off your project with ease.</p>
-  </div>
+    {{> intro }}
 
-  <div id="docs" class="strapless-section">
-    <h1>Docs</h1>
-    <p>In addition to documenting the functionality and usage of the strap.less framework, this page is also designed to be an ideal test environment.</p>
-  </div>
-
-
-  <div class="strapless-section" id="setup">
-    <div class="page-header">
-      <h1>Setup</h1>
-    </div>
-    <p class="lead">Your project should look something like this:</p>
-
-    <pre><code class="bash">
-    less/
-    ├─┬ bones/ <span class="c"># leave these alone</span>
-    │ ├── <span class="k">_config.less</span>
-    │ ├── <span class="k">_mixins.less</span>
-    │ └── <span class="k">...</span>
-    ├─┬ skin/ <span class="c"># customize these after @import ...</span>
-    │ ├── <span class="k">_config.less</span>
-    │ ├── <span class="k">_mixins.less</span>
-    │ └── <span class="k">...</span>
-    ├─┬ page-specific/
-    │ │   <span class="c"># page-specific, non-universal styles should be separate from the main project</span>
-    │ │   <span class="c"># @import _config.less &amp; _mixins.less</span>
-    │ │   <span class="c"># wherever shared variables or mixins are needed</span>
-    │ ├── <span class="k">page-specific-styles.less</span>
-    │ ├── <span class="k">page-specific-responsive.less</span>
-    │ └── <span class="k">...</span>
-    ├── <span class="k">strap.less</span> <span class="c"># all universal modules @imported here from skin/</span>
-    └── <span class="k">page-specific.less</span> <span class="c"># modules from page-specific dir @imported here</span>
-    </code></pre>
-
-    <p>This is the most basic form of strap.less: compiled files for quick drop-in usage in nearly any web project. We provide compiled CSS and JS (<code>strap.less.*</code>), as well as compiled and minified CSS and JS (<code>strap.less.min.*</code>). The image files are compressed using <a href="http://imageoptim.com/">ImageOptim</a>, a Mac app for compressing PNGs.</p>
-    <div class="strapless-sidenote">
-      <h4>jQuery required</h4>
-      <p>Please note that <strong>all JavaScript plugins require jQuery</strong> to be included, as shown in the <a href="#examples">starter template</a>.</p>
-    </div>
-  </div>
-
+    {{> setup }}
 
   <div class="strapless-section" id="customizing">
     <div class="page-header">

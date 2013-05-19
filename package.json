@@ -6,8 +6,8 @@
   },
   "readmeFilename": "README.md",
   "dependencies": {
-    "less-middleware": "*",
     "express": "3.2.4",
+    "less-middleware": "*",
     "simple-hogan": "*"
   },
   "author": "Liam Bowers",

@@ -1,7 +1,8 @@
 var express = require('express'),
     routes = require('./routes'),
     http = require('http'),
-    path = require('path');
+    path = require('path'),
+    staticPath = path.join(__dirname, 'public');
 
 var app = express();
 
@@ -13,8 +14,15 @@ app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
+app.use(require('less-middleware')({
+  src: path.join(__dirname, '..', 'less'),
+  dest: path.join(staticPath, 'stylesheets', 'css'),
+  prefix: '/stylesheets/css',
+  dumpLineNumbers: 'mediaquery',
+  debug: true
+}));
 app.engine('html', require('simple-hogan').read);
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(staticPath));
 
 // development only
 if ('development' == app.get('env')) {

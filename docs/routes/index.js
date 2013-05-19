@@ -5,6 +5,7 @@ exports.index = function(req, res){
     },
     partials: {
       head: 'common/head.html',
+      sidebar: 'common/sidebar.html',
       footer: 'common/footer.html'
     }
   });

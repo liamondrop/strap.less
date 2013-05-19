@@ -1,37 +1,9 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <head>
-    <!-- Meta, title, CSS, favicons, etc. -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>The Docs &middot; strap.less</title>
+<html lang="en">
+  
+  <head>{{> head }}</head>
 
-    <link href="../less/strap.less" rel="stylesheet/less">
-    <script type="text/javascript">
-      less = {
-        env: "development", // or "production"
-        poll: 2000,         // when in watch mode, time in ms between polls
-        dumpLineNumbers: "all"
-      };
-    </script>
-    <script src="./assets/js/less.min.js"></script>
-
-    <!-- Documentation extras -->
-    <link href="./assets/css/docs.css" rel="stylesheet">
-    <link href="./assets/css/pygments-manni.css" rel="stylesheet">
-
-    <!--[if lt IE 9]>
-      <script src="./assets/js/html5shiv.js"></script>
-      <script src="./assets/js/respond/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Favicons -->
-    <link rel="shortcut icon" href="./assets/ico/favicon.png">
-  </head>
-
-  <body class="bs-docs-docs" data-spy="scroll" data-target=".bs-docs-sidebar">
+  <body id="{{ id }}" class="bs-docs-docs" data-spy="scroll" data-target=".bs-docs-sidebar">
 
 
     <!-- Page content of course! -->
@@ -6625,7 +6597,6 @@
             <li><a href="#list-group-badges-chevrons">Badges and chevrons</a></li>
             <li><a href="#list-group-linked">Linked items</a></li>
             <li><a href="#list-group-custom-content">Custom content</a></li>
-            <!-- <li><a href="#list-group-pic">Leading picture</a></li> -->
           </ul>
         </li>
         <li>
@@ -6644,53 +6615,11 @@
 <a href="#welcome" class="bs-docs-top affix">▵</a>
 
 
-    <!-- Main docs footer (social buttons, copyright, etc). -->
-    <!-- Footer
-================================================== -->
-<footer class="bs-docs-footer">
-  <div class="bs-docs-container">
+<footer class="bs-docs-footer">{{> footer }}</footer>
 
-    <div class="bs-docs-social">
-      <ul class="bs-docs-social-buttons">
-        <li>
-          <iframe class="github-btn" src="./new_files/github-btn(1).html" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
-        </li>
-        <li>
-          <iframe class="github-btn" src="./new_files/github-btn.html" allowtransparency="true" frameborder="0" scrolling="0" width="102px" height="20px"></iframe>
-        </li>
-        <li class="follow-btn">
-          <a href="https://twitter.com/twstrap.less" class="twitter-follow-button" data-link-color="#0069D6" data-show-count="true">Follow @twstrap.less</a>
-        </li>
-        <li class="tweet-btn">
-          <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://twitter.github.com/strap.less/" data-count="horizontal" data-via="twstrap.less" data-related="mdo:Creator of Twitter strap.less">Tweet</a>
-        </li>
-      </ul>
-    </div>
-
-
-    <p>Designed and built with all the love in the world by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
-    <p>Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
-    <p><a href="http://glyphicons.com/">Glyphicons Free</a> licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
-    <ul class="footer-links">
-      <li><a href="http://blog.getstrap.less.com/">Blog</a></li>
-      <li class="muted">·</li>
-      <li><a href="https://github.com/twitter/strap.less/issues?state=open">Issues</a></li>
-      <li class="muted">·</li>
-      <li><a href="https://github.com/twitter/strap.less/blob/master/CHANGELOG.md">Changelog</a></li>
-    </ul>
-  </div>
-</footer>
-
-
-    <!-- JS and analytics only. -->
-    <!-- strap.less core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="./assets/js/jquery.js"></script>
-<script src="./assets/js/bootstrap-scrollspy.js"></script>
-
-<!-- <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script> -->
-<script src="./assets/js/holder/holder.js"></script>
-<script src="./assets/js/application.js"></script>  
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/bootstrap-scrollspy.js"></script>
+<script src="/javascripts/holder/holder.js"></script>
+<script src="/javascripts/application.js"></script>  
 
 </body></html>

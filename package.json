@@ -1,7 +1,15 @@
 {
   "name": "strap.less",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node docs/app.js"
+  },
+  "readmeFilename": "README.md",
   "dependencies": {
-    "connect": "2.7.9",
-    "less-middleware": "*"
-  }
+    "less-middleware": "*",
+    "express": "3.2.4",
+    "simple-hogan": "*"
+  },
+  "author": "Liam Bowers",
+  "license": "MIT"
 }

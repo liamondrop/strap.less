@@ -1,15 +1,17 @@
-exports.index = function (req, res) {
+exports.home = function (req, res) {
   res.render('common/layout.html', {
     variables: {
-      id: 'home',
+      id: 'home'
     },
     partials: {
-      head: 'common/head.html',
-      intro: 'intro.html',
-      setup: 'setup.html',
-      extend: 'extend.html',
+      head:    'common/head.html',
+      intro:   'intro.html',
+      setup:   'setup.html',
+      extend:  'extend.html',
+      core:    'core.html',
+      extra:   'extra.html',
       sidebar: 'common/sidebar.html',
-      footer: 'common/footer.html'
+      footer:  'common/footer.html'
     }
   });
 };

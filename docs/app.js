@@ -22,7 +22,7 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', routes.index);
+app.get('/', routes.home);
 
 http.createServer(app).listen(app.get('port'), function () {
   console.log('> listening on http://127.0.0.1:' + app.get('port'));

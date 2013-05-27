@@ -2,9 +2,7 @@ var express = require('express'),
     routes = require('./routes'),
     http = require('http'),
     path = require('path'),
-    staticPath = path.join(__dirname, 'public');
-
-var app = express();
+	app = express();
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -15,7 +13,7 @@ app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
 app.engine('html', require('simple-hogan').read);
-app.use(express.static(staticPath));
+app.use(express.static(path.join(__dirname, 'static')));
 
 // development only
 if ('development' == app.get('env')) {

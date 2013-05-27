@@ -1,0 +1,178 @@
+ <!-- Navs
+  ================================================== -->
+  <div class="strapless-section" id="nav">
+    <div class="page-header">
+      <h1>Navs</h1>
+    </div>
+
+    <p class="lead">Navs available in strap.less have shared markup, starting with the base <code>.nav</code> class, as well as shared states. Swap modifier classes to switch between each style.</p>
+
+    <h2 id="nav-tabs">Tabs</h2>
+    <p>Note the <code>.nav-tabs</code> class requires the <code>.nav</code> base class.</p>
+    <div class="strapless-example">
+      <ul class="nav nav-tabs">
+        <li class="active"><a hre="#">Home</a></li>
+        <li><a hre="#">Profile</a></li>
+        <li><a hre="#">Messages</a></li>
+      </ul>
+    </div>
+<pre><code class="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav nav-tabs"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"active"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Profile<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Messages<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre>
+
+    <h2 id="nav-pills">Pills</h2>
+    <p>Take that same HTML, but use <code>.nav-pills</code> instead:</p>
+    <div class="strapless-example">
+      <ul class="nav nav-pills">
+        <li class="active"><a hre="#">Home</a></li>
+        <li><a hre="#">Profile</a></li>
+        <li><a hre="#">Messages</a></li>
+      </ul>
+    </div>
+<pre><code class="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav nav-pills"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"active"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Profile<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Messages<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre>
+    <p>Pills are also vertically stackable. Just add <code>.nav-stacked</code>.</p>
+    <div class="strapless-example">
+      <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+        <li class="active"><a hre="#">Home</a></li>
+        <li><a hre="#">Profile</a></li>
+        <li><a hre="#">Messages</a></li>
+      </ul>
+    </div>
+<pre><code class="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav nav-pills nav-stacked"</span><span class="nt">&gt;</span>
+  ...
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre>
+
+    <h2>Options</h2>
+
+    <h3 id="nav-justified">Justified links</h3>
+    <p>Easily make tabs or pills equal widths of their parent with <code>.nav-justified</code>.</p>
+    <div class="strapless-example">
+      <ul class="nav nav-tabs nav-justified">
+        <li class="active"><a hre="#">Home</a></li>
+        <li><a hre="#">Profile</a></li>
+        <li><a hre="#">Messages</a></li>
+      </ul>
+      <br>
+      <ul class="nav nav-pills nav-justified">
+        <li class="active"><a hre="#">Home</a></li>
+        <li><a hre="#">Profile</a></li>
+        <li><a hre="#">Messages</a></li>
+      </ul>
+    </div>
+<pre><code class="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav nav-tabs nav-justified"</span><span class="nt">&gt;</span>
+  ...
+<span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav nav-pills nav-justified"</span><span class="nt">&gt;</span>
+  ...
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre>
+
+    <h3 id="nav-disabled-links">Disabled state</h3>
+    <p>For any nav component (tabs, pills, or list), add <code>.disabled</code> for <strong>gray links and no hover effects</strong>.</p>
+
+    <div class="strapless-sidenote">
+      <h4>Link functionality not impacted</h4>
+      <p>This class will only change the <code>&lt;a&gt;</code>'s appearance, not its functionality. Use custom JavaScript to disable links here.</p>
+    </div>
+
+    <div class="strapless-example">
+      <ul class="nav nav-pills">
+        <li><a hre="#">Clickable link</a></li>
+        <li><a hre="#">Clickable link</a></li>
+        <li class="disabled"><a hre="#">Disabled link</a></li>
+      </ul>
+    </div>
+<pre><code class="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav nav-tabs"</span><span class="nt">&gt;</span>
+  ...
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"disabled"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Disabled link<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  ...
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre>
+
+
+    <h3 id="nav-alignment">Component alignment</h3>
+    <p>To align nav links, use the <code>.pull-left</code> or <code>.pull-right</code> utility classes. Both classes will add a CSS float in the specified direction.</p>
+
+
+    <hr class="strapless-separator">
+
+
+    <h2 id="nav-dropdowns">Dropdowns</h2>
+    <p>Add dropdown menus with a little extra HTML and the <a href="http://v3.bootcss.com/docs/javascript.html#dropdowns">dropdowns JavaScript plugin</a>.</p>
+
+    <h3>Tabs with dropdowns</h3>
+    <div class="strapless-example">
+      <ul class="nav nav-tabs">
+        <li class="active"><a hre="#">Home</a></li>
+        <li><a hre="#">Help</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" hre="#">
+            Dropdown <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a hre="#">Action</a></li>
+            <li><a hre="#">Another action</a></li>
+            <li><a hre="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a hre="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+<pre><code class="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav nav-tabs"</span><span class="nt">&gt;</span>
+  ...
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"dropdown"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-toggle"</span> <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+      Dropdown <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"caret"</span><span class="nt">&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"dropdown-menu"</span><span class="nt">&gt;</span>
+      ...
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  ...
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre>
+
+    <h3>Pills with dropdowns</h3>
+    <div class="strapless-example">
+      <ul class="nav nav-pills">
+        <li class="active"><a hre="#">Home</a></li>
+        <li><a hre="#">Help</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" hre="#">
+            Dropdown <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a hre="#">Action</a></li>
+            <li><a hre="#">Another action</a></li>
+            <li><a hre="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a hre="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /example -->
+<pre><code class="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav nav-pills"</span><span class="nt">&gt;</span>
+  ...
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"dropdown"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-toggle"</span> <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+      Dropdown <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"caret"</span><span class="nt">&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"dropdown-menu"</span><span class="nt">&gt;</span>
+      ...
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  ...
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre>
+
+  </div>

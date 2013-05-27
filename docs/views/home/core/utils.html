@@ -1,0 +1,162 @@
+<!-- Helpers
+  ================================================== -->
+  <div class="strapless-section" id="helper-classes">
+    <div class="page-header">
+      <h1>Helper classes</h1>
+    </div>
+
+    <h3>Close icon</h3>
+    <p>Use the generic close icon for dismissing content like modals and alerts.</p>
+    <div class="strapless-example">
+      <p><button class="close" style="float: none;">×</button></p>
+    </div>
+<pre><code class="html">
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"close"</span> <span class="na">style=</span><span class="s">"float: none;"</span><span class="nt">&gt;</span><span class="ni">&amp;times;</span><span class="nt">&lt;/button&gt;</span>
+</code></pre>
+
+    <h3>.pull-left</h3>
+    <p>Float an element left</p>
+<pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pull-left"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+<pre><code class="css">
+<span class="nc">.pull-left</span> <span class="p">{</span>
+  <span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+    <h3>.pull-right</h3>
+    <p>Float an element right</p>
+<pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pull-right"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+<pre><code class="css">
+<span class="nc">.pull-right</span> <span class="p">{</span>
+  <span class="k">float</span><span class="o">:</span> <span class="k">right</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+    <h3>.clearfix</h3>
+    <p>Clear the <code>float</code> on any element. Utilizes <a href="http://nicolasgallagher.com/micro-clearfix-hack/">the micro clearfix</a> as popularized by Nicolas Gallagher.</p>
+<pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"clearfix"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+<pre><code class="css">
+<span class="o">//</span> <span class="nt">Mixin</span>
+<span class="nc">.clearfix</span> <span class="p">{</span>
+  <span class="o">&amp;:</span><span class="n">before</span><span class="o">,</span>
+  <span class="o">&amp;:</span><span class="n">after</span> <span>{</span>
+    <span class="k">content</span><span class="o">:</span> <span class="s2">" "</span><span class="p">;</span>
+    <span class="k">display</span><span class="o">:</span> <span class="n">table</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="o">&amp;</span><span class="nd">:after</span> <span class="p">{</span>
+    <span class="k">clear</span><span class="o">:</span> <span class="k">both</span><span class="p">;</span>
+  <span class="p">}</span>
+<span>}</span>
+
+<span class="o">//</span> <span class="nt">Usage</span>
+<span class="nc">.element</span> <span class="p">{</span>
+  <span class="o">.</span><span class="n">clearfix</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+
+ <!-- Responsive utilities
+  ================================================== -->
+  <div class="strapless-section" id="responsive-utilities">
+    <div class="page-header">
+      <h1>Responsive utilities</h1>
+    </div>
+    <p class="lead">For faster mobile-friendly development, use these utility classes for showing and hiding content by device via media query. Also included are utility classes for toggling content when printed.</p>
+
+    <h3>Responsive classes</h3>
+    <table class="table table-bordered table-striped responsive-utilities hidden-phone">
+      <thead>
+        <tr>
+          <th>Class</th>
+          <th>Phones <small>767px and below</small></th>
+          <th>Tablets <small>979px to 768px</small></th>
+          <th>Desktops <small>Default</small></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th><code>.visible-phone</code></th>
+          <td class="is-visible">Visible</td>
+          <td class="is-hidden">Hidden</td>
+          <td class="is-hidden">Hidden</td>
+        </tr>
+        <tr>
+          <th><code>.visible-tablet</code></th>
+          <td class="is-hidden">Hidden</td>
+          <td class="is-visible">Visible</td>
+          <td class="is-hidden">Hidden</td>
+        </tr>
+        <tr>
+          <th><code>.visible-desktop</code></th>
+          <td class="is-hidden">Hidden</td>
+          <td class="is-hidden">Hidden</td>
+          <td class="is-visible">Visible</td>
+        </tr>
+        <tr>
+          <th><code>.hidden-phone</code></th>
+          <td class="is-hidden">Hidden</td>
+          <td class="is-visible">Visible</td>
+          <td class="is-visible">Visible</td>
+        </tr>
+        <tr>
+          <th><code>.hidden-tablet</code></th>
+          <td class="is-visible">Visible</td>
+          <td class="is-hidden">Hidden</td>
+          <td class="is-visible">Visible</td>
+        </tr>
+        <tr>
+          <th><code>.hidden-desktop</code></th>
+          <td class="is-visible">Visible</td>
+          <td class="is-visible">Visible</td>
+          <td class="is-hidden">Hidden</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Print classes</h3>
+    <table class="table table-bordered table-striped responsive-utilities">
+      <thead>
+        <tr>
+          <th>Class</th>
+          <th>Browser</th>
+          <th>Print</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th><code>.visible-print</code></th>
+          <td class="is-hidden">Hidden</td>
+          <td class="is-visible">Visible</td>
+        </tr>
+        <tr>
+          <th><code>.hidden-print</code></th>
+          <td class="is-visible">Visible</td>
+          <td class="is-hidden">Hidden</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>When to use</h3>
+    <p>Use on a limited basis and avoid creating entirely different versions of the same site. Instead, use them to complement each device's presentation. Responsive utilities should not be used with tables, and as such are not supported.</p>
+
+    <h3>Test case</h3>
+    <p>Resize your browser or load on different devices to test the above classes.</p>
+    <h4>Visible on...</h4>
+    <p>Green checkmarks indicate that class is visible in your current viewport.</p>
+    <ul class="responsive-utilities-test">
+      <li>Phone<span class="visible-phone">✔ Phone</span></li>
+      <li>Tablet<span class="visible-tablet">✔ Tablet</span></li>
+      <li>Desktop<span class="visible-desktop">✔ Desktop</span></li>
+    </ul>
+    <h4>Hidden on...</h4>
+    <p>Here, green checkmarks indicate that class is hidden in your current viewport.</p>
+    <ul class="responsive-utilities-test hidden-on">
+      <li>Phone<span class="hidden-phone">✔ Phone</span></li>
+      <li>Tablet<span class="hidden-tablet">✔ Tablet</span></li>
+      <li>Desktop<span class="hidden-desktop">✔ Desktop</span></li>
+    </ul>
+
+  </div>

@@ -397,27 +397,20 @@
 }
 
 // Make a grid
-
-// Creates a wrapper for a series of columns
 .make-row() {
-  // Then clear the floated columns
-  .clearfix();
-
-  // Negative margin nested rows out to align the content of columns
   .row {
     margin-left:  (@grid-gutter-width / -2);
     margin-right: (@grid-gutter-width / -2);
   }
+  .clearfix();
 }
+
 // Generate the columns
 .make-column(@columns) {
   position: relative;
-  // Float and set width: 100%; for easy stacking on mobile devices
   float: left;
   width: 100%;
-  // Prevent columns from collapsing when empty
   min-height: 1px;
-  // Inner gutter via padding
   padding-left:  (@grid-gutter-width / 2);
   padding-right: (@grid-gutter-width / 2);
 
@@ -443,38 +436,19 @@
   }
 }
 
-// Small grid columns
-.generate-grid-columns(@grid-columns) {
+.build-grid(@grid-columns) {
 
-  .col-sm-X (@index) when (@index > 0) {
-    .col-sm-@{index} { .col-sm-(@index); }
-    .col-sm-X((@index - 1));
+  .col-X (@index) when (@index > 0) {
+    .col-@{index} { .col-(@index); }
+    .col-X((@index - 1));
   }
-  .col-sm-X (0) {}
-
-  // Generate columns
-  .col-sm-X(@grid-columns);
-
-  // Apply the styles
-  .col-sm-(@columns) {
-    width: percentage((@columns / @grid-columns));
-  }
-}
-
-// Large grid columns
-.generate-large-grid-columns(@grid-columns) {
-
-  .col-lg-X (@index) when (@index > 0) {
-    .col-lg-@{index} { .col-lg-(@index); }
-    .col-lg-X((@index - 1));
-  }
-  .col-lg-X (0) {}
+  .col-X (0) {}
 
   // Generate the columns
-  .col-lg-X(@grid-columns);
+  .col-X(@grid-columns);
 
   // Apply the styles
-  .col-lg-(@columns) {
+  .col-(@columns) {
     width: percentage((@columns / @grid-columns));
   }
 
@@ -510,7 +484,6 @@
     right: percentage((@columns / @grid-columns));
   }
 
-  // Generate .spanX and .offsetX
   .col-offset-X(@grid-columns);
   .col-push-X(@grid-columns);
   .col-pull-X(@grid-columns);

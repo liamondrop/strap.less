@@ -2,8 +2,6 @@
 // Grid system
 // --------------------------------------------------
 
-
-// Set the container width, and override it for fixed navbars in media queries
 .container {
   .container-fixed();
 }
@@ -13,26 +11,17 @@
   .make-row();
 }
 
-
-// Common styles for small and large grid columns
 .col {
   position: relative;
-  // Float and set width: 100%; for easy stacking on mobile devices
   float: left;
   width: 100%;
-  // Prevent columns from collapsing when empty
   min-height: 1px;
-  // Inner gutter via padding
   padding-left:  (@grid-gutter-width / 2);
   padding-right: (@grid-gutter-width / 2);
 }
 
-// Generate small grid classes first
-.generate-grid-columns(@grid-columns);
-
-// Then generate the larger grid classes via media query
 @media screen and (min-width: @screen-small) {
-  .generate-large-grid-columns(@grid-columns);
+  .build-grid(@grid-columns);
 }
 
 

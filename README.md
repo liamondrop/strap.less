@@ -6,8 +6,8 @@ Nearly naked LESS framework
 ```bash
     less/
     ├─┬ bones/ # leave these alone</span>
-    │ ├── _config.less</span>
-    │ ├── _mixins.less</span>
+    │ ├── _config.less
+    │ ├── _mixins.less
     │ └── ...
     ├─┬ skin/ # customize these after @import
     │ ├── _config.less

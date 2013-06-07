@@ -5,7 +5,7 @@ Nearly naked LESS framework
 
 ```bash
     less/
-    ├─┬ bones/ # leave these alone</span>
+    ├─┬ bones/ # leave these alone
     │ ├── _config.less
     │ ├── _mixins.less
     │ └── ...

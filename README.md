@@ -15,7 +15,7 @@ Nearly naked LESS framework
     │ └── ...
     ├─┬ page-specific/
     │ │   # page-specific, non-universal styles should be separate from the main project
-    │ │   # @import _config.less &amp; _mixins.less
+    │ │   # @import _config.less & _mixins.less
     │ │   # wherever shared variables or mixins are needed
     │ ├── page-specific-styles.less
     │ ├── page-specific-responsive.less

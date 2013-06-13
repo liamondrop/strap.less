@@ -1,3 +1,6 @@
+@import "_config.less";
+@import "_mixins.less";
+
 //
 // Grid system
 // --------------------------------------------------
@@ -12,8 +15,6 @@
 }
 
 .col {
-  position: relative;
-  float: left;
   width: 100%;
   min-height: 1px;
   padding-left:  (@grid-gutter-width / 2);
@@ -21,14 +22,18 @@
 }
 
 @media screen and (min-width: @screen-small) {
+  .col {
+    position: relative;
+    float: left;
+  }
   .build-grid(@grid-columns);
 }
 
 
-// Responsive: Tablets and up
-@media screen and (min-width: @screen-tablet) {
+// Tablets
+@media screen and (min-width: @screen-small) {
   .container {
-    max-width: 728px;
+    max-width: (@screen-small - (@grid-gutter-width * 2));
   }
   .row {
     margin-left:  (@grid-gutter-width / -2);
@@ -36,17 +41,17 @@
   }
 }
 
-// Responsive: Desktops and up
-@media screen and (min-width: @screen-desktop) {
+// Small Laptops/Desktops
+@media screen and (min-width: @screen-medium) {
   .container {
-    max-width: 940px;
+    max-width: (@screen-medium - (@grid-gutter-width * 2));
   }
 }
 
-// Responsive: Large desktops and up
-@media screen and (min-width: @screen-large-desktop) {
+// Large screens
+@media screen and (min-width: @screen-large) {
   .container {
-    max-width: 1170px;
+    max-width: (@screen-large - (@grid-gutter-width * 2));
   }
 }
 

@@ -5,9 +5,9 @@ Nearly naked LESS framework
 
 ```bash
     less/
-    ├─┬ bones/ # leave these alone</span>
-    │ ├── _config.less</span>
-    │ ├── _mixins.less</span>
+    ├─┬ bones/ # leave these alone
+    │ ├── _config.less
+    │ ├── _mixins.less
     │ └── ...
     ├─┬ skin/ # customize these after @import
     │ ├── _config.less
@@ -15,7 +15,7 @@ Nearly naked LESS framework
     │ └── ...
     ├─┬ page-specific/
     │ │   # page-specific, non-universal styles should be separate from the main project
-    │ │   # @import _config.less &amp; _mixins.less
+    │ │   # @import _config.less & _mixins.less
     │ │   # wherever shared variables or mixins are needed
     │ ├── page-specific-styles.less
     │ ├── page-specific-responsive.less

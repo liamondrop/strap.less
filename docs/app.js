@@ -2,7 +2,7 @@ var express = require('express'),
     routes = require('./routes'),
     http = require('http'),
     path = require('path'),
-	app = express();
+    app = express();
 
 // all environments
 app.set('port', process.env.PORT || 3000);

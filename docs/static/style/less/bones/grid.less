@@ -1,57 +1,77 @@
-@import "_config.less";
-@import "_mixins.less";
+.container() {
+  margin-right: auto;
+  margin-left: auto;
+  .clearfix();
 
-//
-// Grid system
-// --------------------------------------------------
+  @media (min-width: @media_small_min) {
+    width: (@media_small_min - @gutter_width);
+  }
 
-.container {
-  .container-fixed();
+  @media (min-width: @media_medium_min) {
+    width: (@media_medium_min - @gutter_width);
+  }
+
+  @media (min-width: @media_large_min) {
+    width: (@media_large_min - @gutter_width_large);
+  }
 }
 
-// Mobile-first defaults
-.row {
-  .make-row();
+.row() {
+  .clearfix();
+
+  @media (min-width: @media_small_min) {
+    margin-left:  (@gutter_width / -2);
+    margin-right: (@gutter_width / -2);
+  }
+
+  @media (min-width: @media_large_min) {
+    margin-left:  (@gutter_width_large / -2);
+    margin-right: (@gutter_width_large / -2);
+  }
 }
 
-.col {
-  width: 100%;
+.col_width(@num_columns, @orientation: @grid_orientation) {
+  width: auto;
   min-height: 1px;
-  padding-left:  (@grid-gutter-width / 2);
-  padding-right: (@grid-gutter-width / 2);
-}
 
-@media screen and (min-width: @screen-small) {
-  .col {
+  @media (min-width: @media_small_min) {
     position: relative;
-    float: left;
+    float: @orientation;
+    padding-left:  (@gutter_width / 2);
+    padding-right: (@gutter_width / 2);
+    width: percentage(@num_columns / @grid_columns);
   }
-  .build-grid(@grid-columns);
-}
 
-
-// Tablets
-@media screen and (min-width: @screen-small) {
-  .container {
-    max-width: (@screen-small - (@grid-gutter-width * 2));
-  }
-  .row {
-    margin-left:  (@grid-gutter-width / -2);
-    margin-right: (@grid-gutter-width / -2);
+  @media (min-width: @media_large_min) {
+    padding-left:  (@gutter_width_large / 2);
+    padding-right: (@gutter_width_large / 2);
   }
 }
 
-// Small Laptops/Desktops
-@media screen and (min-width: @screen-medium) {
-  .container {
-    max-width: (@screen-medium - (@grid-gutter-width * 2));
+// Orientation-aware Push & Pull of columns
+.col_push(@num_columns) when (@grid_orientation = @ltr) {
+  @media (min-width: @media_small_min) {
+    left: percentage(@num_columns / @grid_columns);
   }
 }
 
-// Large screens
-@media screen and (min-width: @screen-large) {
-  .container {
-    max-width: (@screen-large - (@grid-gutter-width * 2));
+.col_pull(@num_columns) when (@grid_orientation = @ltr) {
+  @media (min-width: @media_small_min) {
+    right: percentage(@num_columns / @grid_columns);
   }
 }
+
+
+.col_push(@num_columns) when (@grid_orientation = @rtl) {
+  @media (min-width: @media_small_min) {
+    right: percentage(@num_columns / @grid_columns);
+  }
+}
+
+.col_pull(@num_columns) when (@grid_orientation = @rtl) {
+  @media (min-width: @media_small_min) {
+    left: percentage(@num_columns / @grid_columns);
+  }
+}
+
 

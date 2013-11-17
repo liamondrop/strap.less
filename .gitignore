@@ -2,3 +2,5 @@
 node_modules
 npm-debug.log
 strap.css
+docs/static/style/less/bones/__config.less
+docs/static/style/less/bones/__mixins.less

@@ -14,14 +14,32 @@
 .grid-demo {
   margin-bottom: 15px;
 }
-.grid-demo .col {
+.col {
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: #eee;
-  border: 1px solid #ddd;
+  border: 1px solid #333;
+  border-right-width: 0;
 }
-.grid-demo .col:hover {
-  background-color: #ddd;
+.col:last-child {
+  border-right-width: 1px;
+}
+.col:hover {
+  background-color: #333;
+  color: #fff;
+}
+.col[class*='push'],
+.col[class*='pull'] {
+  border-right-width: 1px;
+}
+.col[class*='push'] {
+  border-color: #f60;
+  color: #f60;
+  background: rgba(255, 60, 0, .25);
+}
+.col[class*='pull'] {
+  border-color: #09f;
+  color: #09f;
+  background: rgba(0, 160, 255, .25);
 }
 
 

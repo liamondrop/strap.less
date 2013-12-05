@@ -1,10 +1,10 @@
 .container() {
   margin-right: auto;
   margin-left: auto;
-  .clearfix();
 
   @media (min-width: @media_small_min) {
     width: (@media_small_min - @gutter_width);
+    .clearfix();
   }
 
   @media (min-width: @media_medium_min) {
@@ -17,11 +17,10 @@
 }
 
 .row() {
-  .clearfix();
-
   @media (min-width: @media_small_min) {
     margin-left:  (@gutter_width / -2);
     margin-right: (@gutter_width / -2);
+    .clearfix();
   }
 
   @media (min-width: @media_large_min) {
@@ -48,14 +47,14 @@
   }
 }
 
-// Orientation-aware Push & Pull of columns
-.col_push(@num_columns) when (@orientation = @ltr) {
+// Push & Pull of columns
+.col_push(@num_columns) {
   @media (min-width: @media_small_min) {
     left: percentage(@num_columns / @grid_columns);
   }
 }
 
-.col_pull(@num_columns) when (@orientation = @ltr) {
+.col_pull(@num_columns) {
   @media (min-width: @media_small_min) {
     right: percentage(@num_columns / @grid_columns);
   }

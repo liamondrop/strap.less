@@ -6,58 +6,43 @@
   .row();
 }
 
-// col widths
-.w1 {
-  .col_width(1);
-}
-.w2 {
-  .col_width(2);
-}
-.w3 {
-  .col_width(3);
-}
-.w4 {
-  .col_width(4);
-}
-.w5 {
-  .col_width(5);
-}
-.w6 {
-  .col_width(6);
-}
-.w7 {
-  .col_width(7);
-}
-.w8 {
-  .col_width(8);
-}
-.w9 {
-  .col_width(9);
-}
-.w10 {
-  .col_width(10);
-}
-.w11 {
-  .col_width(11);
+
+// loop to generate column classes
+.generateColumns (@width) when (@width > 0) {
+  // create column class for each col width
+  // e.g. .w1, .w2, .w3, ...
+  .w@{width} {
+    .col_width(@width);
+  }
+
+  // next iteration
+  .generateColumns(@width - 1);
 }
 
+// execute the loop
+.generateColumns(11);
 
-// col positions
-.p1 {
-  .col_push(1);
+
+
+// loop to generate push classes
+// p1, p2, p3, ...
+.generatePushes (@push) when (@push > 0) {
+  .push@{push} {
+    .col_push(@push);
+  }
+
+  .generatePushes(@push - 1);
 }
-.p2 {
-  .col_push(2);
+
+.generatePushes(6);
+
+// pull classes
+.generatePulls (@pull) when (@pull > 0) {
+  .pull@{pull} {
+    .col_pull(@pull);
+  }
+
+  .generatePulls(@pull - 1);
 }
-.p3 {
-  .col_push(3);
-}
-.p4 {
-  .col_push(4);
-}
-.p5 {
-  .col_push(5);
-}
-.p6 {
-  .col_push(6);
-}
+
+.generatePulls(6);
